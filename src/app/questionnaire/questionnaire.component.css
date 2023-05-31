@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.navigation-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7; /* Hintergrundfarbe des Kreises */
+  border-radius: 50%; /* Machen Sie den Kreis rund */
+  width: 50px; /* Breite des Kreises */
+  height: 50px; /* Höhe des Kreises */
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Vergrößerung des Schatten */
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigation-button:hover {
+  transform: scale(1.1);
+}
+
+.question-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%; /* Erhöhung der Breite des Kastens */
+  padding: 50px; /* Erhöhung des Inneren Abstandes */
+  border-radius: 20px; /* Rundung der Ecken */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Vergrößerung des Schatten */
+  background-color: #f7f7f7; /* Änderung der Hintergrundfarbe */
+  min-height: 500px; /* Erhöhung der Mindesthöhe */
+  margin: 0 20px;
+}
+
+.question-content h2 {
+  color: #11998e; /* Anpassung der Farbe an den Hintergrund */
+
+}
+
+.question-input {
+  width: 100%;
+}
+
+.range-input {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="range"] {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.range-input p {
+  width: 50px;
+  text-align: right;
+}

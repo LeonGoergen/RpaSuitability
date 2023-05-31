@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="navigation-button" (click)="onPrevious()">&#60;</div>
+
+  <div class="question-box">
+    <div class="question-content">
+      <h2>{{currentQuestion.question}}</h2>
+      <p>{{currentQuestion.explanation}}</p>
+    </div>
+
+    <div class="question-input">
+      <form [formGroup]="questionnaireForm">
+        <div class="range-input">
+          <input type="range" min="0" max="100" step="10" value="0" formControlName="answer">
+          <p>{{questionnaireForm.get('answer')?.value}}%</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="navigation-button" (click)="onNext()">&#62;</div>
+</div>
