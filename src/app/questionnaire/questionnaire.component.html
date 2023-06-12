@@ -1,21 +1,20 @@
-<div class="container">
-  <div class="navigation-button" (click)="onPrevious()">&#60;</div>
+<div class="questionnaire-container">
+  <h1>Fragebogen</h1>
 
-  <div class="question-box">
-    <div class="question-content">
-      <h2>{{currentQuestion.question}}</h2>
-      <p>{{currentQuestion.explanation}}</p>
-    </div>
-
-    <div class="question-input">
-      <form [formGroup]="questionnaireForm">
-        <div class="range-input">
-          <input type="range" min="0" max="100" step="20" value="0" formControlName="answer">
-          <p>{{questionnaireForm.get('answer')?.value}}%</p>
+  <ul class="questionnaire">
+    <li *ngFor="let question of questions">
+      <div class="question">
+        <h2 class="question-actual">{{question.question}}</h2>
+        <p class="question-explanation">{{question.explanation}}</p>
+        <div class="user-input">
+          <input type="radio" name="option"> Nein
+          <input type="radio" name="option"> Eher nicht
+          <input type="radio" name="option"> Vielleicht
+          <input type="radio" name="option"> Eher ja
+          <input type="radio" name="option"> Ja
+          <button class="submit-button">Abschicken</button>
         </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="navigation-button" (click)="onNext()">&#62;</div>
+      </div>
+    </li>
+  </ul>
 </div>

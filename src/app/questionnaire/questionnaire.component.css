@@ -1,62 +1,70 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
 }
 
-.navigation-button {
+.questionnaire-container {
+  width: 80vw;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.questionnaire {
+  list-style-type: none;
+  padding: 0;
+}
+
+.question {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question-actual {
+  font-weight: 500;
+  color: #333;
+}
+
+.question-explanation {
+  font-weight: 300;
+  color: #666;
+  margin: 10px 0;
+}
+
+.user-input {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #f7f7f7; /* Hintergrundfarbe des Kreises */
-  border-radius: 50%; /* Machen Sie den Kreis rund */
-  width: 50px; /* Breite des Kreises */
-  height: 50px; /* Höhe des Kreises */
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.user-input input[type='radio'] {
+  margin: 5px;
+}
+
+.user-input .submit-button {
+  margin-left: auto;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Vergrößerung des Schatten */
-  transition: transform 0.3s ease-in-out;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.navigation-button:hover {
-  transform: scale(1.1);
-}
-
-.question-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 60%; /* Erhöhung der Breite des Kastens */
-  padding: 50px; /* Erhöhung des Inneren Abstandes */
-  border-radius: 20px; /* Rundung der Ecken */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Vergrößerung des Schatten */
-  background-color: #f7f7f7; /* Änderung der Hintergrundfarbe */
-  min-height: 300px; /* Erhöhung der Mindesthöhe */
-  margin: 0 20px;
-}
-
-.question-content h2 {
-  color: #11998e; /* Anpassung der Farbe an den Hintergrund */
-
-}
-
-.question-input {
-  width: 100%;
-}
-
-.range-input {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-input[type="range"] {
-  flex: 1;
-  margin-right: 10px;
-}
-
-.range-input p {
-  width: 50px;
-  text-align: right;
+.user-input .submit-button:hover {
+  background-color: #0056b3;
 }
