@@ -1,19 +1,13 @@
 <div class="questionnaire-container">
-  <h1>Fragebogen</h1>
+  <h1>RPA Eignungstest</h1>
+  <p class="questionnaire-explanation"> Erklärung zum Fragebogen: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus </p>
 
   <ul class="questionnaire">
     <li *ngFor="let question of questions">
       <div class="question">
-        <h2 class="question-actual">{{question.question}}</h2>
-        <p class="question-explanation">{{question.explanation}}</p>
-        <div class="user-input">
-          <input type="radio" name="option"> Nein
-          <input type="radio" name="option"> Eher nicht
-          <input type="radio" name="option"> Vielleicht
-          <input type="radio" name="option"> Eher ja
-          <input type="radio" name="option"> Ja
-          <button class="submit-button">Abschicken</button>
-        </div>
+        <h2 class="question-actual">{{question.question}}<span class="question-icon" (click)="openExplanation(question.id)">?</span></h2>
+        <p class="question-explanation" [class.open]="question.id === currentQuestionId">{{question.explanation}}</p>
+        <app-question-answering-buttons [questionId]="question.id" [questionWeight]="question.weight" (valueChange)="onValueChange($event, question.id)"/>
       </div>
     </li>
   </ul>

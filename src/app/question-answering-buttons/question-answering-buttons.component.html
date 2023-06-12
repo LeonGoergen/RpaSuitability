@@ -1,0 +1,7 @@
+<div class="user-input">
+  <label class="rad-label" *ngFor="let value of [1, 2, 3, 4, 5]; let choice = index">
+    <input type="radio" class="rad-input" [name]="'question' + questionId" [value]="value" (change)="onValueChange(value)">
+    <div class="rad-design"></div>
+    <div class="rad-text">{{['Nein', 'Eher Nein', 'Neutral', 'Eher Ja', 'Ja'][choice]}}</div>
+  </label>
+</div>
