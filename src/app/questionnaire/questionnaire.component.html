@@ -11,4 +11,6 @@
       </div>
     </li>
   </ul>
+
+  <app-results *ngIf="areAllQuestionsAnswered()" [totalScore]="totalScore" [questions]="questions"></app-results>
 </div>

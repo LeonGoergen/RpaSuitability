@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { questions } from '../../assets/questions';
 
 @Component({
@@ -9,7 +9,7 @@ import { questions } from '../../assets/questions';
 export class QuestionnaireComponent {
   questions = questions;
   totalScore: { [id: string]: number } = {};
-  currentQuestionId: number = this.questions[0]?.id;
+  currentQuestionId: number = 0;
 
   onValueChange(weightedValue: number, questionId: number) {
     // Update score for question
@@ -18,23 +18,10 @@ export class QuestionnaireComponent {
     // Calculate total score
     const total = Object.values(this.totalScore).reduce((a, b) => a + b, 0);
     console.log('Total score:', total);
+  }
 
-    // Move to next question
-    const currentIndex = this.questions.findIndex(question => question.id === questionId);
-    if (currentIndex < this.questions.length - 1) {
-      this.currentQuestionId = this.questions[currentIndex + 1].id;
-    }
-
-    // Close current question explanation
-    this.currentQuestionId = 0;
-    // Delay before moving to next question
-    setTimeout(() => {
-      // Move to next question
-      const currentIndex = this.questions.findIndex(question => question.id === questionId);
-      if (currentIndex < this.questions.length - 1) {
-        this.currentQuestionId = this.questions[currentIndex + 1].id;
-      }
-    }, 1000);
+  areAllQuestionsAnswered(): boolean {
+    return Object.keys(this.totalScore).length === this.questions.length;
   }
 
   openExplanation(questionId: number) {
