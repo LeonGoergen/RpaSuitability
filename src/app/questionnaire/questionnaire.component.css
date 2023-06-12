@@ -31,7 +31,7 @@
   border-radius: 20px; /* Rundung der Ecken */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Vergrößerung des Schatten */
   background-color: #f7f7f7; /* Änderung der Hintergrundfarbe */
-  min-height: 500px; /* Erhöhung der Mindesthöhe */
+  min-height: 300px; /* Erhöhung der Mindesthöhe */
   margin: 0 20px;
 }
 

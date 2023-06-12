@@ -10,7 +10,7 @@
     <div class="question-input">
       <form [formGroup]="questionnaireForm">
         <div class="range-input">
-          <input type="range" min="0" max="100" step="10" value="0" formControlName="answer">
+          <input type="range" min="0" max="100" step="20" value="0" formControlName="answer">
           <p>{{questionnaireForm.get('answer')?.value}}%</p>
         </div>
       </form>
