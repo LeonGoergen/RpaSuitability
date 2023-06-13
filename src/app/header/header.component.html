@@ -1,9 +1,12 @@
 <header class="header">
   <nav>
     <ul class="menu">
-      <li class="menu-item"><button class="menu-button" type="button">Homepage</button></li>
-      <li class="menu-item"><button class="menu-button" type="button">Eignungstest</button></li>
-      <li class="menu-item"><button class="menu-button" type="button">Kontakt</button></li>
+      <li class="menu-item"><button class="menu-button" type="button" routerLink="/">Homepage</button></li>
+      <li class="menu-item"><button class="menu-button" type="button" routerLink="/questionnaire">Eignungstest</button></li>
+      <li class="menu-item"><button class="menu-button" type="button" routerLink="/contact">Kontakt</button></li>
     </ul>
   </nav>
 </header>
+
+<!-- Router outlet will display the content of the routed component -->
+<router-outlet></router-outlet>

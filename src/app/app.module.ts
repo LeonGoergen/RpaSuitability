@@ -7,7 +7,10 @@ import { AppComponent } from './app.component';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { HeaderComponent } from './header/header.component';
 import { QuestionAnsweringButtonsComponent } from './question-answering-buttons/question-answering-buttons.component';
-import {ResultsComponent} from "./results/results.component";
+import { ResultsComponent } from "./results/results.component";
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
     declarations: [
@@ -15,13 +18,16 @@ import {ResultsComponent} from "./results/results.component";
         QuestionnaireComponent,
         HeaderComponent,
         QuestionAnsweringButtonsComponent,
-        ResultsComponent
+        ResultsComponent,
+        HomeComponent,
+        ContactComponent
     ],
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         FormsModule,
-        MatDialogModule
+        MatDialogModule,
+        AppRoutingModule
     ],
   providers: [],
   bootstrap: [AppComponent]

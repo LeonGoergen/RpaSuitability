@@ -6,7 +6,7 @@
     <li *ngFor="let question of questions">
       <div class="question">
         <h2 class="question-actual">{{question.question}}<span class="question-icon" (click)="openExplanation(question.id)">?</span></h2>
-        <p class="question-explanation" [class.open]="question.id === currentQuestionId">{{question.explanation}}</p>
+        <p class="question-explanation" [class.open]="openQuestions.includes(question.id)">{{question.explanation}}</p>
         <app-question-answering-buttons [questionId]="question.id" [questionWeight]="question.weight" (valueChange)="onValueChange($event, question.id)"/>
       </div>
     </li>
