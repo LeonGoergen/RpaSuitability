@@ -1,12 +1,26 @@
-<header class="header">
-  <nav>
-    <ul class="menu">
-      <li class="menu-item"><button class="menu-button" type="button" routerLink="/">Homepage</button></li>
-      <li class="menu-item"><button class="menu-button" type="button" routerLink="/questionnaire">Eignungstest</button></li>
-      <li class="menu-item"><button class="menu-button" type="button" routerLink="/contact-page">Kontakt</button></li>
+<nav class="navbar">
+  <div class="navbar__container">
+    <div class="navbar__logo">
+      <img src="assets/Images/uniLogo.png" alt="RPA Image" class="logo">
+    </div>
+    <div class="navbar__toggle navbar__toggle-bars" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="navbar__menu">
+      <li class="navbar__item">
+        <a class="navbar__links" routerLink="/">Homepage</a>
+      </li>
+      <li class="navbar__item">
+        <a class="navbar__links" routerLink="/questionnaire">Eignungstest</a>
+      </li>
+      <li class="navbar__item">
+        <a class="navbar__links" routerLink="/contact-page">Kontakt</a>
+      </li>
     </ul>
-  </nav>
-</header>
+  </div>
+</nav>
 
 <!-- Router outlet will display the content of the routed component -->
 <router-outlet></router-outlet>

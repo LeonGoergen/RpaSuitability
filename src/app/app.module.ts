@@ -11,6 +11,7 @@ import { ResultsComponent } from "./questionnair-page/results/results.component"
 import { AppRoutingModule } from './routing/app-routing.module';
 import { HomeComponent } from './home-page/home.component';
 import { ContactComponent } from './contact-page/contact.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { ContactComponent } from './contact-page/contact.component';
         ReactiveFormsModule,
         FormsModule,
         MatDialogModule,
-        AppRoutingModule
+        AppRoutingModule,
+        NgOptimizedImage
     ],
   providers: [],
   bootstrap: [AppComponent]

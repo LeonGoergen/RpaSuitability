@@ -6,7 +6,10 @@
     <li *ngFor="let question of questions">
       <div class="question">
         <h2 class="question-actual">{{question.question}}<span class="question-icon" (click)="openExplanation(question.id)">?</span></h2>
-        <p class="question-explanation" [class.open]="openQuestions.includes(question.id)">{{question.explanation}}</p>
+        <div class="question-explanation" [class.open]="openQuestions.includes(question.id)">{{question.explanation}}
+          <h5>Unterfragen:</h5>
+          <p *ngFor="let subQuestion of question.subQuestions" class="question-sub">{{subQuestion}}</p>
+        </div>
         <app-question-answering-buttons [questionId]="question.id" [questionWeight]="question.weight" (valueChange)="onValueChange($event, question.id)"/>
       </div>
     </li>
