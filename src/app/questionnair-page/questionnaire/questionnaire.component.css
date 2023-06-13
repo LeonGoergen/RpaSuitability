@@ -3,8 +3,7 @@ body {
 }
 
 .questionnaire-container {
-  width: 80vw;
-  max-width: 800px;
+  width: 60vw;
   margin: auto;
   padding: 20px;
 }

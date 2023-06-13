@@ -1,9 +1,16 @@
-<div class="contact-container">
-  <h1>Kontaktiere uns</h1>
-  <form class="contact-form">
-    <input type="text" placeholder="Dein Name" required>
-    <input type="email" placeholder="Deine Email" required>
-    <textarea placeholder="Deine Nachricht" required></textarea>
-    <button type="submit">Senden</button>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <h1>Kontaktformular</h1>
+    <div>
+      <input type="text" id="name" formControlName="name" required placeholder="Name">
+    </div>
+
+    <div>
+      <input type="email" id="email" formControlName="email" required placeholder="Email">
+    </div>
+
+    <div>
+      <textarea id="message" formControlName="message" required placeholder="Nachricht"></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
   </form>
-</div>

@@ -7,7 +7,6 @@
   top: 0;
   z-index: 999;
   background-color: #f9f9f9;
-
 }
 
 .navbar__container {
@@ -22,20 +21,15 @@
 }
 
 .navbar__logo {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 8vw;
-}
-
-.navbar__logo-text {
-  display: block;
-  margin-left: 10px;
-  color: #fff;
+  left: 20vw
 }
 
 .navbar__logo img {
-  max-height: 90px;
+  max-height: 70px;
 }
 
 .navbar__text {
@@ -44,11 +38,12 @@
 }
 
 .navbar__menu {
+  position: absolute;
   display: flex;
   align-items: center;
   list-style: none;
   text-align: center;
-  margin-right: 7vw;
+  right: 20vw;
 }
 
 .navbar__item {
@@ -69,106 +64,4 @@
 .navbar__links:hover {
   color: #cccccc;
   transition: all 0.2s ease;
-}
-
-#unterkunft {
-  padding-top: 150px; /* Adjust this value as needed */
-}
-
-#umgebung {
-  padding-top: 150px; /* Adjust this value as needed */
-}
-
-#anfahrt {
-  padding-top: 150px; /* Adjust this value as needed */
-}
-
-#kontakt {
-  padding-top: 150px; /* Adjust this value as needed */
-}
-
-@media screen and (max-width: 800px) {
-  .navbar__container {
-    display : flex;
-    justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 0;
-  }
-  .navbar__menu {
-    display: grid;
-    grid-template-columns: auto;
-    margin: 0;
-    width: 25%;
-    position: absolute;
-    top: -1000px;
-    opacity: 0;
-    transition: all 1s ease;
-    height: 50vh;
-    z-index: -1;
-    right: -2px;
-    border-radius: 0 0 10px 10px;
-    border: 2px solid #004b32;
-    border-top: none;
-  }
-  .navbar__logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 50px;
-  }
-  .navbar__logo-text {
-    display: block;
-    margin-left: 10px;
-    color: #fff;
-  }
-
-  .navbar__menu.active {
-    background: #216477;
-    top: 100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 99;
-    height: 40vh;
-    font-size: 1.2rem;
-  }
-
-  .navbar__toggle .bar {
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition : all 0.5s ease-in-out;
-    background: #fff;
-    display: block;
-    cursor: pointer;
-  }
-  .navbar__toggle-bars:hover .bar {
-    background-color: #004b32;
-  }
-  .navbar__item {
-    width: 100%;
-  }
-  .navbar__links {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-  }
-  #mobile-menu {
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    transform: translate(5%, 20%);
-  }
-  #mobile-menu.is-active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  #mobile-menu.is-active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  #mobile-menu.is-active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
 }
