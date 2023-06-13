@@ -1,5 +1,5 @@
 import { Component, AfterViewChecked } from '@angular/core';
-import { questions } from '../../assets/questions';
+import { questions } from '../../../assets/questions';
 
 @Component({
   selector: 'app-questionnaire',

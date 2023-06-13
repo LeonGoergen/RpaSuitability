@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { resultTexts } from '../assets/resultTexts';
-import { resultInterface } from "../assets/result-interface";
+import { resultTexts } from '../../assets/resultTexts';
+import { resultInterface } from "../../assets/result-interface";
 
 @Injectable({
   providedIn: 'root',

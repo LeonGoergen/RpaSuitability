@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import {QuestionInterface} from "../../assets/question-interface";
-import { ContentService } from '../result-service.service';
+import {QuestionInterface} from "../../../assets/question-interface";
+import { ContentService } from '../../services/result-service.service';
 
 @Component({
   selector: 'app-results',
@@ -15,6 +15,10 @@ export class ResultsComponent implements OnChanges {
   content: any;
 
   constructor(private contentService: ContentService) { }
+
+  getStyle(resultPercentage: number) {
+    return { '--i': resultPercentage.toFixed(0) };
+  }
 
   ngOnChanges() {
     if (this.totalScore && this.questions) {

@@ -4,13 +4,13 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
-import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
+import { QuestionnaireComponent } from './questionnair-page/questionnaire/questionnaire.component';
 import { HeaderComponent } from './header/header.component';
-import { QuestionAnsweringButtonsComponent } from './question-answering-buttons/question-answering-buttons.component';
-import { ResultsComponent } from "./results/results.component";
-import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
+import { QuestionAnsweringButtonsComponent } from './questionnair-page/question-answering-buttons/question-answering-buttons.component';
+import { ResultsComponent } from "./questionnair-page/results/results.component";
+import { AppRoutingModule } from './routing/app-routing.module';
+import { HomeComponent } from './home-page/home.component';
+import { ContactComponent } from './contact-page/contact.component';
 
 @NgModule({
     declarations: [
