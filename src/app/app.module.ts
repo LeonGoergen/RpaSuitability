@@ -12,6 +12,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { HomeComponent } from './home-page/home.component';
 import { ContactComponent } from './contact-page/contact.component';
 import {NgOptimizedImage} from "@angular/common";
+import { ContactFormComponent } from './contact-page/contact-form/contact-form.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import {NgOptimizedImage} from "@angular/common";
         QuestionAnsweringButtonsComponent,
         ResultsComponent,
         HomeComponent,
-        ContactComponent
+        ContactComponent,
+        ContactFormComponent
     ],
     imports: [
         BrowserModule,

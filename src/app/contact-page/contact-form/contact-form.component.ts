@@ -1,12 +1,12 @@
 import {Component, Renderer2} from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  selector: 'app-contact-form',
+  templateUrl: './contact-form.component.html',
+  styleUrls: ['./contact-form.component.css']
 })
-export class ContactComponent {
+export class ContactFormComponent {
   contactForm: FormGroup;
 
   constructor(private fb: FormBuilder, private renderer: Renderer2) {

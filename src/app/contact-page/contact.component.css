@@ -2,56 +2,34 @@ body {
   font-family: Arial, sans-serif;
 }
 
-form {
-  max-width: 600px;
-  margin: 0 auto;
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+  margin: 20px auto;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-details {
+  width: 50%;
   padding: 20px;
-  background-color: #f7f7f7;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-label {
-  display: block;
-  font-weight: bold;
-  margin-top: 20px;
+.contact-option {
+  width: 18vw;
+  display: flex;
+  align-items: center;
+  margin: 40px 20px;
+  justify-content: flex-start;
 }
 
-input[type="text"], input[type="email"], textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
+.contact-option p {
+  margin-left: 20px;
+  width: calc(100% - 60px); /* Breite der .contact-option abzüglich des Logos und des linken Randes */
 }
 
-input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-  border-color: #449D44;
-  outline: none;
+.logo {
+  height: 50px;
 }
-
-textarea {
-  min-height: 150px;
-  resize: none;
-}
-
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  color: #fff;
-  background-color: #449D44;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #398439;
-}
-
-input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
-  background-color: #FFCCCC;
-}
-

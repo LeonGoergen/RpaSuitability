@@ -1,4 +1,4 @@
-import { Component, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewChecked, Renderer2 } from '@angular/core';
 import { questions } from '../../../assets/questions';
 
 @Component({
@@ -10,6 +10,10 @@ export class QuestionnaireComponent implements AfterViewChecked {
   questions = questions;
   totalScore: { [id: string]: number } = {};
   openQuestions: number[] = [];  // Die Liste der offenen Fragen
+
+  constructor(private renderer: Renderer2) {
+    this.renderer.setStyle(document.body, 'background', 'linear-gradient(90deg, #11998e 0%, #38ef7d 100%)');
+  }
 
   onValueChange(weightedValue: number, questionId: number) {
     // Update score for question

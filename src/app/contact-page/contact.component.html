@@ -1,16 +1,18 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-  <h1>Kontaktformular</h1>
-    <div>
-      <input type="text" id="name" formControlName="name" required placeholder="Name">
+<div class="container">
+  <div class="contact-details">
+    <h2>Kontaktiere uns</h2>
+    <div class="contact-option">
+      <img src="assets/Images/email.png" alt="RPA Image" class="logo">
+      <p>beispiel@beispiel.de</p>
     </div>
-
-    <div>
-      <input type="email" id="email" formControlName="email" required placeholder="Email">
+    <div class="contact-option">
+      <img src="assets/Images/telephone.svg" alt="RPA Image" class="logo">
+      <p>0176/12345678</p>
     </div>
-
-    <div>
-      <textarea id="message" formControlName="message" required placeholder="Nachricht"></textarea>
+    <div class="contact-option">
+      <img src="assets/Images/location-point.svg" alt="RPA Image" class="logo">
+      <p>Beispielstraße 123 12345 Stadt</p>
     </div>
-
-    <button type="submit">Submit</button>
-  </form>
+  </div>
+  <app-contact-form></app-contact-form>
+</div>

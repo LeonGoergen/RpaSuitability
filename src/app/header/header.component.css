@@ -25,7 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  left: 20vw
+  left: 15vw
 }
 
 .navbar__logo img {
@@ -43,7 +43,7 @@
   align-items: center;
   list-style: none;
   text-align: center;
-  right: 20vw;
+  right: 15vw;
 }
 
 .navbar__item {
