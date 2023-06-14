@@ -10,7 +10,6 @@ export class ContactFormComponent {
   contactForm: FormGroup;
 
   constructor(private fb: FormBuilder, private renderer: Renderer2) {
-    this.renderer.setStyle(document.body, 'background', 'lightgrey');
     this.contactForm = this.fb.group({
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),

@@ -1,23 +1,48 @@
 <div class="home-container">
   <div class="content-section">
-    <div class="intro-section">
-      <h1>Willkommen zu unserer Website!</h1>
-      <p>Wir helfen Ihnen herauszufinden, ob Robot Process Automation (RPA) für Ihr Unternehmen geeignet ist.</p>
-      <button class="home-button" routerLink="/questionnaire">Starten Sie den Eignungstest</button>
 
-      <div class="info-section">
-        <h2>Was ist RPA?</h2>
-        <p>Robotic Process Automation (RPA) ist eine Technologie, die es erlaubt, Geschäftsprozesse zu automatisieren. Dabei imitiert die Software menschliche Interaktionen mit digitalen Systemen und führt Aufgaben schneller, genauer und unermüdlich aus, während sich Ihre Mitarbeiter auf wertvollere Aufgaben konzentrieren können.</p>
-
-        <h2>Warum RPA?</h2>
-        <p>RPA kann Ihnen helfen, Zeit und Kosten zu sparen, indem es repetitive Aufgaben automatisiert. Es kann auch dazu beitragen, menschliche Fehler zu reduzieren und die Effizienz zu steigern.</p>
-
-        <h2>Unsere Mission</h2>
-        <p>Unsere Mission ist es, Unternehmen bei ihrer digitalen Transformation zu unterstützen, indem wir ihnen helfen, die Vorteile von RPA zu erkennen und zu nutzen.</p>
+    <div class="info-section">
+      <div [ngSwitch]="selectedValue">
+        <div *ngSwitchCase="0">
+          <div class="info-box">
+            <p>Robotic Process Automation (RPA) ist eine Technologie, die es erlaubt, Geschäftsprozesse zu automatisieren. Dabei imitiert die Software menschliche Interaktionen mit digitalen Systemen und führt Aufgaben schneller, genauer und unermüdlich aus, während sich Ihre Mitarbeiter auf wertvollere Aufgaben konzentrieren können.</p>
+            <img id="rpa" src="assets/Images/rpa.svg" alt="RPA Image" class="home-image">
+          </div>
+        </div>
+        <div *ngSwitchCase="1">
+          <div class="info-box">
+            <img id="computer" src="assets/Images/computer.svg" alt="RPA Image" class="home-image">
+            <p>RPA kann Ihnen helfen, Zeit und Kosten zu sparen, indem es repetitive Aufgaben automatisiert. Es kann auch dazu beitragen, menschliche Fehler zu reduzieren und die Effizienz zu steigern.</p>
+          </div>
+        </div>
+        <div *ngSwitchCase="2">
+          <div class="facts-box">
+            <h3>Die AIIM (Association for Information and Image Management) führte eine Umfrage in verschiedenen Unternehmen durch, wobei</h3>
+            <div class="facts-container">
+              <div class="fact">
+                <h1>95%</h1>
+                <p>von einer erhöhten Produktivität berichteten.</p>
+              </div>
+              <div class="fact">
+                <h1>93%</h1>
+                <p>von einer verbesserten Compliance berichteten.</p>
+              </div>
+              <div class="fact">
+                <h1>91%</h1>
+                <p>von reduzierten Kosten berichteten.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="3">
+          <div class="info-box">
+            <p>Unsere Mission ist es, Unternehmen bei ihrer digitalen Transformation zu unterstützen, indem wir ihnen helfen, die Vorteile von RPA zu erkennen und zu nutzen.</p>
+            <img id="university" src="assets/Images/university.svg" alt="RPA Image" class="home-image">
+          </div>
+        </div>
       </div>
     </div>
-    <div class="image-section">
-      <img src="assets/Images/rpa.svg" alt="RPA Image" class="home-image">
-    </div>
+
+    <app-content-slider (selectedValueChange)="onSliderValueChange($event)"></app-content-slider>
   </div>
 </div>

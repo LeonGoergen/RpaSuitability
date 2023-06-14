@@ -1,15 +1,17 @@
 body {
   font-family: Arial, sans-serif;
+  background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   width: 70vw;
-  margin: 20px auto;
+  margin: 14px auto;
   border-radius: 10px;
   background-color: #f9f9f9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: 75.4vh;
 }
 
 .contact-details {

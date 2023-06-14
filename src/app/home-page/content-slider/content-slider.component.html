@@ -1,0 +1,7 @@
+<div class="content-slider">
+  <label class="rad-label" *ngFor="let value of [0, 1, 2, 3]; let choice = index">
+    <input type="radio" class="rad-input" name="content-slider" [value]="value" (change)="onValueChange(value)">
+    <div class="rad-design"></div>
+    <div class="rad-text">{{['Was ist RPA?', 'Warum RPA?', 'Zahlen und Fakten', 'Unsere Mission'][choice]}}</div>
+  </label>
+</div>
