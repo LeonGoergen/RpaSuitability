@@ -2,7 +2,7 @@ form {
   width: 35vw;
   margin: 0 auto;
   padding: 20px;
-  background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+  background: linear-gradient(360deg, #11998e 0%, #38ef7d 100%);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -38,7 +38,7 @@ button {
   width: 100%;
   padding: 10px;
   color: #1f1f1f;
-  background-color: #cccccc;
+  background-color: #38ef7d;
   border: none;
   border-radius: 5px;
   cursor: pointer;

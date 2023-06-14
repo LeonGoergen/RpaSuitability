@@ -1,5 +1,20 @@
+@font-face {
+  font-family: 'UbuntuRegular';
+  src: url('./assets/fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'UbuntuBold';
+  src: url('./assets/fonts/Ubuntu-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'UbuntuItalic';
+  src: url('./assets/fonts/Ubuntu-Italic.ttf');
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: UbuntuRegular, serif;
   margin: 0;
   padding: 0;
   background-color: white;

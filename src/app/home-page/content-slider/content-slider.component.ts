@@ -30,7 +30,7 @@ export class ContentSliderComponent {
       this.selectedValue = (this.selectedValue + 1) % 4; // Switch between the values 0, 1, 2 and 3
       this.updateLabelClass();
       this.selectedValueChange.emit(this.selectedValue);
-    }, 5000); // Switch every 10 seconds
+    }, 12000); // Switch every 10 seconds
   }
 
   onValueChange(value: number) {

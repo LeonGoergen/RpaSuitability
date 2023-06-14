@@ -16,7 +16,6 @@ body {
   --h: 212deg;
   --l: 43%;
   --brandColor: hsl(var(--h), 71%, var(--l));
-  font-family: Montserrat, sans-serif;
   margin: 0;
   background-color: whitesmoke;
 }
@@ -90,17 +89,19 @@ h3::before {
 .contact-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #36a200;
   color: #FFFFFF;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
+  width: 100%;
+  border: none;
 }
 
 .contact-button:hover {
   cursor: pointer;
-  background-color: #004ca1;
+  background-color: #1c7e00;
 }
 

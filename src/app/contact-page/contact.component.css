@@ -1,5 +1,4 @@
 body {
-  font-family: Arial, sans-serif;
   background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
 }
 
@@ -9,14 +8,34 @@ body {
   width: 70vw;
   margin: 14px auto;
   border-radius: 10px;
-  background-color: #f9f9f9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: #f6f6f6;
   height: 75.4vh;
 }
 
 .contact-details {
+  position: relative;
   width: 50%;
   padding: 20px;
+  font-family: UbuntuBold, sans-serif;
+  z-index: 1;
+}
+
+.contact-details::before {
+  content: "";
+  background-image: url('/assets/Images/map.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 .contact-option {
@@ -24,7 +43,11 @@ body {
   display: flex;
   align-items: center;
   margin: 40px 20px;
+  padding: 5px;
+  border-radius: 10px;
   justify-content: flex-start;
+  background: white;
+  border: 1px solid #ccc;
 }
 
 .contact-option p {
@@ -34,4 +57,10 @@ body {
 
 .logo {
   height: 50px;
+}
+
+.contact-details h2 {
+  font-family: UbuntuBold, sans-serif;
+  font-size: 2.25rem;
+  margin-left: 20px;
 }

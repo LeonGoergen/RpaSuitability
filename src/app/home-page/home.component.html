@@ -5,19 +5,26 @@
       <div [ngSwitch]="selectedValue">
         <div *ngSwitchCase="0">
           <div class="info-box">
-            <p>Robotic Process Automation (RPA) ist eine Technologie, die es erlaubt, Geschäftsprozesse zu automatisieren. Dabei imitiert die Software menschliche Interaktionen mit digitalen Systemen und führt Aufgaben schneller, genauer und unermüdlich aus, während sich Ihre Mitarbeiter auf wertvollere Aufgaben konzentrieren können.</p>
+            <div class="text-container">
+              <h2>Was ist RPA?</h2>
+              <p>Robotic Process Automation (RPA) ist eine Technologie, die es ermöglicht, repetitive, manuelle Aufgaben in Unternehmen durch Software-"Roboter" zu automatisieren. Diese Roboter simulieren menschliche Aktivitäten, z.B. Daten eingeben, E-Mails senden oder Rechnungen verarbeiten.</p>
+            </div>
             <img id="rpa" src="assets/Images/rpa.svg" alt="RPA Image" class="home-image">
           </div>
         </div>
         <div *ngSwitchCase="1">
           <div class="info-box">
             <img id="computer" src="assets/Images/computer.svg" alt="RPA Image" class="home-image">
-            <p>RPA kann Ihnen helfen, Zeit und Kosten zu sparen, indem es repetitive Aufgaben automatisiert. Es kann auch dazu beitragen, menschliche Fehler zu reduzieren und die Effizienz zu steigern.</p>
+            <div id="reverse" class="text-container">
+              <h2>Warum sollten Sie RPA benutzen?</h2>
+              <p>Mit RPA können Unternehmen ihre Effizienz steigern und Fehler reduzieren. Es spart Zeit und Ressourcen, da Aufgaben schneller und genauer als von Menschen durchgeführt werden können. RPA ermöglicht es, sich auf strategischere und wertvollere Arbeit zu konzentrieren.</p>
+            </div>
           </div>
         </div>
         <div *ngSwitchCase="2">
           <div class="facts-box">
-            <h3>Die AIIM (Association for Information and Image Management) führte eine Umfrage in verschiedenen Unternehmen durch, wobei</h3>
+            <h2>Zahlen und Fakten</h2>
+            <p>Die AIIM (Association for Information and Image Management) führte eine Umfrage in verschiedenen Unternehmen durch, wobei</p>
             <div class="facts-container">
               <div class="fact">
                 <h1>95%</h1>
@@ -36,8 +43,11 @@
         </div>
         <div *ngSwitchCase="3">
           <div class="info-box">
-            <p>Unsere Mission ist es, Unternehmen bei ihrer digitalen Transformation zu unterstützen, indem wir ihnen helfen, die Vorteile von RPA zu erkennen und zu nutzen.</p>
-            <img id="university" src="assets/Images/university.svg" alt="RPA Image" class="home-image">
+            <div class="text-container">
+              <h2>Unsere Mission</h2>
+              <p>Unsere Mission ist es, Unternehmen dabei zu helfen, das Potenzial von RPA zu erkennen und zu nutzen. Wir bieten einen Fragebogen an, der die Eignung von RPA für Ihr Unternehmen prüft. Unser Ziel ist es, die Automatisierung für alle zugänglich und nutzbar zu machen.</p>
+            </div>
+            <img id="flag" src="assets/Images/flag.svg" alt="RPA Image" class="home-image">
           </div>
         </div>
       </div>
