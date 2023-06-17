@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 form {
   width: 35vw;
   margin: 0 auto;
@@ -5,6 +9,7 @@ form {
   background: linear-gradient(360deg, #11998e 0%, #38ef7d 100%);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: 75vh;
 }
 
 label {
@@ -19,8 +24,10 @@ input[type="text"], input[type="email"], textarea {
   padding: 10px;
   border: 2px solid #ddd;
   border-radius: 3px;
-  height: 8vh;
-  margin-bottom: 20px;
+  height: 7vh;
+  margin-bottom: 2vh;
+  font-family: Ubuntu, sans-serif;
+  font-size: 1rem;
 }
 
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
@@ -29,8 +36,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 }
 
 textarea {
-  min-height: 150px;
+  min-height: 25vh;
   resize: none;
+  font-family: Ubuntu, sans-serif;
+  font-size: 1rem;
 }
 
 button {
@@ -42,6 +51,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  height: 7vh;
 }
 
 button:hover {
@@ -50,4 +60,40 @@ button:hover {
 
 input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
   background-color: #FFCCCC;
+}
+
+@media screen and (min-width: 1600px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  textarea {
+    font-size: 1.2rem;
+  }
+
+  input[type="text"], input[type="email"] {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h2 {
+    font-size: .8rem;
+  }
+
+  textarea {
+    font-size: .7rem;
+  }
+
+  input[type="text"], input[type="email"] {
+    font-size: .7rem;
+  }
+
+  button {
+    font-size: .7rem;
+  }
 }

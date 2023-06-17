@@ -23,7 +23,7 @@ export class ResultsComponent implements OnChanges {
   ngOnChanges() {
     if (this.totalScore && this.questions) {
       const totalScore = Object.values(this.totalScore).reduce((a, b) => a + b, 0);
-      const totalPossibleScore = this.questions.reduce((total, question) => total + question.weight * 4, 0);
+      const totalPossibleScore = this.questions.reduce((total, question) => total + question.weight * 3, 0);
       this.resultPercentage = (totalScore / totalPossibleScore) * 100;
       this.content = this.contentService.getContentByPercentage(this.resultPercentage);
     }

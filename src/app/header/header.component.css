@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120px;
+  height: 15vh;
   font-size: 1.2rem;
   top: 0;
   z-index: 999;
@@ -30,12 +30,7 @@
 }
 
 .navbar__logo img {
-  max-height: 70px;
-}
-
-.navbar__text {
-  margin-left: 10px;
-  font-size: 1.5rem;
+  width: 22vw;
 }
 
 .navbar__menu {
@@ -48,7 +43,7 @@
 }
 
 .navbar__item {
-  height: 80px;
+  height: 5vh;
 }
 
 .navbar__links {
@@ -65,4 +60,22 @@
 .navbar__links:hover {
   color: #cccccc;
   transition: all 0.2s ease;
+}
+
+@media screen and (min-width: 1600px) {
+  .navbar {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    font-size: .6rem;
+  }
 }

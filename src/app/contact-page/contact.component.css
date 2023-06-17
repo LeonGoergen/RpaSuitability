@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
 }
@@ -6,11 +10,11 @@ body {
   display: flex;
   justify-content: space-between;
   width: 70vw;
-  margin: 14px auto;
+  margin: 5vh auto ;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background: #f6f6f6;
-  height: 75.4vh;
+  height: 75vh;
 }
 
 .contact-details {
@@ -34,7 +38,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.5;
+  opacity: 0.3;
   z-index: -1;
 }
 
@@ -42,8 +46,8 @@ body {
   width: 18vw;
   display: flex;
   align-items: center;
-  margin: 40px 20px;
-  padding: 5px;
+  margin: 4vh 20px;
+  padding: 1vh;
   border-radius: 10px;
   justify-content: flex-start;
   background: white;
@@ -51,16 +55,41 @@ body {
 }
 
 .contact-option p {
-  margin-left: 20px;
-  width: calc(100% - 60px); /* Breite der .contact-option abzüglich des Logos und des linken Randes */
+  margin-left: 1vw;
+  width: calc(100% - 3vw);
+  font-size: .8rem;
 }
 
 .logo {
-  height: 50px;
+  height: 7vh;
 }
 
 .contact-details h2 {
   font-family: UbuntuBold, sans-serif;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   margin-left: 20px;
+}
+
+.adress p {
+  width: 100%;
+}
+
+@media screen and (min-width: 1600px) {
+  .contact-details h2 {
+    font-size: 3rem;
+  }
+
+  .contact-option p {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contact-details h2 {
+    font-size: 1.2rem;
+  }
+
+  .contact-option p {
+    font-size: 0.5rem;
+  }
 }

@@ -19,7 +19,10 @@ export class ContactFormComponent {
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      console.log('Form data:', this.contactForm.value);
+      const { name, email, message } = this.contactForm.value;
+      console.log('Name:', name);
+      console.log('Email:', email);
+      console.log('Message:', message);
       // TODO: Implement your service call here
       this.contactForm.reset();
     } else {

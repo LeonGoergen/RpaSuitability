@@ -28,7 +28,7 @@ body {
 .info-section h2 {
   margin-top: 20px;
   font-size: 1.2rem;
-  color: #333;
+  color: #2d7fd9;
 }
 
 .info-box {
@@ -44,14 +44,7 @@ body {
 .facts-box {
   height: 45vh;
   padding: 20px;
-}
-
-.home-image {
-  transition: all 0.3s;
-}
-
-.home-image:hover {
-  transform: scale(1.02);
+  margin: auto;
 }
 
 #flag {
@@ -68,6 +61,7 @@ body {
 
 .facts-box h2 {
   text-align: center;
+  color: #2d7fd9;
 }
 
 .facts-box p {
@@ -86,7 +80,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   width: 70%;
-  margin: 20px auto;
+  margin: 2vh auto;
 }
 
 .fact {
@@ -106,7 +100,7 @@ body {
 
 .fact h1 {
   color: #2d7fd9;
-  margin: 10px 0;
+  margin: 1vh 0;
   font-size: 2rem;
 }
 
@@ -123,4 +117,48 @@ body {
   border-right: 2px solid #ccc;
   padding: 0 10px 0 30px;
   text-align: right;
+}
+
+@media screen and (min-width: 1600px) {
+  .info-box h2 {
+    font-size: 2rem;
+  }
+
+  .info-box p {
+    font-size: 1.5rem;
+  }
+
+  .facts-box h2 {
+    font-size: 2rem;
+  }
+
+  .facts-box p {
+    font-size: 1.5rem;
+  }
+
+  .facts-box h1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .info-box h2 {
+    font-size: 1rem;
+  }
+
+  .info-box p {
+    font-size: .8rem;
+  }
+
+  .facts-box h2 {
+    font-size: 1rem;
+  }
+
+  .facts-box p {
+    font-size: .7rem;
+  }
+
+  .facts-box h1 {
+    font-size: 1.5rem;
+  }
 }
