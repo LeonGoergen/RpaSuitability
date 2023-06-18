@@ -15,19 +15,21 @@ import {NgOptimizedImage} from "@angular/common";
 import { ContactFormComponent } from './contact-page/contact-form/contact-form.component';
 import {MatSliderModule} from "@angular/material/slider";
 import { ContentSliderComponent } from './home-page/content-slider/content-slider.component';
+import {AboutUsComponent} from "./contact-page/about-us/about-us.component";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        QuestionnaireComponent,
-        HeaderComponent,
-        QuestionAnsweringButtonsComponent,
-        ResultsComponent,
-        HomeComponent,
-        ContactComponent,
-        ContactFormComponent,
-        ContentSliderComponent,
-    ],
+  declarations: [
+    AppComponent,
+    QuestionnaireComponent,
+    HeaderComponent,
+    QuestionAnsweringButtonsComponent,
+    ResultsComponent,
+    HomeComponent,
+    ContactComponent,
+    ContactFormComponent,
+    ContentSliderComponent,
+    AboutUsComponent,
+  ],
     imports: [
         BrowserModule,
         ReactiveFormsModule,
