@@ -2,6 +2,21 @@ body {
 
 }
 
+.info-container {
+  width: 70vw;
+  padding: 20px 0;
+  margin: auto;
+  border-bottom: 2px solid #e0e0e0;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-container h2 {
+  padding-top: 20px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
 .questionnaire-container {
   width: 70vw;
   margin: auto;

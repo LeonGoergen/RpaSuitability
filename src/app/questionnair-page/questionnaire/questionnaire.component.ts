@@ -15,7 +15,7 @@ export class QuestionnaireComponent implements AfterViewChecked {
   showResults: boolean = false; // Track the visibility of the Results component
 
   constructor(private renderer: Renderer2) {
-    this.renderer.setStyle(document.body, 'background', 'linear-gradient(90deg, #11998e 0%, #38ef7d 100%)');
+    this.renderer.setStyle(document.body, 'background', 'linear-gradient(180deg, #11998e 0%, #38ef7d 100%)');
   }
 
   onValueChange(weightedValue: number, questionId: number) {
