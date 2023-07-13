@@ -4,7 +4,10 @@
     <li [ngStyle]="getStyle(resultPercentage)">
       <h3><span class="counter">{{resultPercentage.toFixed(0)}}%</span> {{content.title}}</h3>
       <p>{{content.text}}</p>
-      <button class="contact-button" routerLink="/contact-page">Kontakt aufnehmen</button>
+      <div class="buttons">
+        <button class="redo-button" (click)="redo.emit()">Test Wiederholen</button>
+        <button class="contact-button" routerLink="/contact-page">Kontakt aufnehmen</button>
+      </div>
     </li>
   </ol>
 </div>

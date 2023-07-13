@@ -7,13 +7,19 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class QuestionAnsweringButtonsComponent {
   @Input() questionId?: number;
-  @Input() questionWeight?: number;  // Input für das Gewicht der Frage
-  @Output() valueChange = new EventEmitter<number>();  // Output Event Emitter
+  @Input() questionWeight?: number;
+  @Output() valueChange = new EventEmitter<number>();
+
+  selectedValue: number | null = null;
 
   onValueChange(value: number) {
-    // Wertänderung: Multiplizieren Sie den Wert der Auswahl mit dem Gewicht der Frage
     const weight = this.questionWeight || 1;
     const weightedValue = value * weight;
-    this.valueChange.emit(weightedValue);  // Emit Event mit dem gewichteten Wert
+    this.selectedValue = value;
+    this.valueChange.emit(weightedValue);
+  }
+
+  reset() {
+    this.selectedValue = null;
   }
 }

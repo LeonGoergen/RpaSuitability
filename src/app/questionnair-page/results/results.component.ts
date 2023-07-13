@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges } from '@angular/core';
-import {QuestionInterface} from "../../../assets/question-interface";
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import { QuestionInterface } from '../../../assets/question-interface';
 import { ContentService } from '../../services/result-service.service';
 
 @Component({
@@ -9,12 +9,13 @@ import { ContentService } from '../../services/result-service.service';
 })
 export class ResultsComponent implements OnChanges {
   @Input() totalScore?: { [id: string]: number };
-  @Input() questions?:  QuestionInterface[];
+  @Input() questions?: QuestionInterface[];
+  @Output() redo = new EventEmitter<void>();
 
   resultPercentage: number = 0;
   content: any;
 
-  constructor(private contentService: ContentService) { }
+  constructor(private contentService: ContentService) {}
 
   getStyle(resultPercentage: number) {
     return { '--i': resultPercentage.toFixed(0) };

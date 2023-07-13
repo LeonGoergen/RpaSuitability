@@ -1,9 +1,7 @@
 <div class="user-input">
-  <!-- [0, 1, 2, 3, 4] -->
   <label class="rad-label" *ngFor="let value of [0, 1, 2, 3]; let choice = index">
-    <input type="radio" class="rad-input" [name]="'question' + questionId" [value]="value" (change)="onValueChange(value)">
+    <input type="radio" class="rad-input" [name]="'question' + questionId" [value]="value" (change)="onValueChange(value)" [checked]="selectedValue === value">
     <div class="rad-design"></div>
-    <!-- ['Nein', 'Eher Nein', 'Neutral', 'Eher Ja', 'Ja'] -->
     <div class="rad-text">{{['Nein', 'Eher Nein', 'Eher Ja', 'Ja'][choice]}}</div>
   </label>
 </div>

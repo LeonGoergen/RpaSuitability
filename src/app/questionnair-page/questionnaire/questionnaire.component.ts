@@ -1,5 +1,6 @@
-import { Component, AfterViewChecked, Renderer2 } from '@angular/core';
+import { Component, AfterViewChecked, Renderer2, QueryList, ViewChildren } from '@angular/core';
 import { questions } from '../../../assets/questions';
+import { QuestionAnsweringButtonsComponent } from '../question-answering-buttons/question-answering-buttons.component';
 
 @Component({
   selector: 'app-questionnaire',
@@ -9,22 +10,24 @@ import { questions } from '../../../assets/questions';
 export class QuestionnaireComponent implements AfterViewChecked {
   questions = questions;
   totalScore: { [id: string]: number } = {};
-  openQuestions: number[] = [];  // Die Liste der offenen Fragen
+  openQuestions: number[] = [];
+  @ViewChildren(QuestionAnsweringButtonsComponent) buttonsComponents!: QueryList<QuestionAnsweringButtonsComponent>;
+  showResults: boolean = false; // Track the visibility of the Results component
 
   constructor(private renderer: Renderer2) {
     this.renderer.setStyle(document.body, 'background', 'linear-gradient(90deg, #11998e 0%, #38ef7d 100%)');
   }
 
   onValueChange(weightedValue: number, questionId: number) {
-    // Update score for question
     this.totalScore[questionId] = weightedValue;
-
-    // Calculate total score
     const total = Object.values(this.totalScore).reduce((a, b) => a + b, 0);
     console.log('Total score:', total);
+
+    if (this.areAllQuestionsAnswered()) {
+      this.showResults = true; // Show the Results component when all questions are answered
+    }
   }
 
-  // Um ans ende der page zu scrollen, nachdem alle fragen beantwortet wurden
   ngAfterViewChecked(): void {
     if (this.areAllQuestionsAnswered()) {
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
@@ -38,9 +41,18 @@ export class QuestionnaireComponent implements AfterViewChecked {
   openExplanation(questionId: number) {
     const index = this.openQuestions.indexOf(questionId);
     if (index > -1) {
-      this.openQuestions.splice(index, 1);  // Wenn die Frage bereits offen ist, schließen Sie sie
+      this.openQuestions.splice(index, 1);
     } else {
-      this.openQuestions.push(questionId);  // Wenn die Frage geschlossen ist, öffnen Sie sie
+      this.openQuestions.push(questionId);
     }
+  }
+
+  resetQuestionnaire() {
+    this.totalScore = {};
+    this.openQuestions = [];
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.buttonsComponents.forEach(component => component.reset());
+
+    this.showResults = false; // Reset the visibility of the Results component
   }
 }

@@ -2,6 +2,10 @@
   border-top: 2px solid #e0e0e0;
   width: 60vw;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 h1 {
@@ -50,7 +54,6 @@ li {
   background-color: white;
 }
 
-
 li::before {
   content: '';
   display: block;
@@ -87,6 +90,26 @@ h3::before {
   content: none;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.redo-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #54a482;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  width: 30%;
+}
+
 .contact-button {
   display: inline-block;
   padding: 10px 20px;
@@ -96,14 +119,18 @@ h3::before {
   border-radius: 5px;
   font-weight: bold;
   text-align: center;
-  margin-top: 20px;
-  width: 100%;
   border: none;
+  width: 70%;
 }
 
 .contact-button:hover {
   cursor: pointer;
   background-color: #1c7e00;
+}
+
+.redo-button:hover {
+  cursor: pointer;
+  background-color: #2d5445;
 }
 
 @media screen and (min-width: 1600px) {
@@ -121,7 +148,8 @@ h3::before {
     font-size: 2rem;
   }
 
-  .contact-button {
+  .contact-button,
+  .redo-button {
     font-size: 1.5rem;
   }
 }
@@ -141,8 +169,8 @@ h3::before {
     font-size: 1rem;
   }
 
-  .contact-button {
+  .contact-button,
+  .redo-button {
     font-size: .8rem;
   }
 }
-
