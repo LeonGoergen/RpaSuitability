@@ -56,7 +56,6 @@ export const questions: QuestionInterface[] = [
       'Arbeitet der Prozess mit einer großen Menge an Informationen oder Daten?'
     ],
     weight: 5,
-    dependsOn: 2
   },
   {
     id: 6,
