@@ -4,4 +4,5 @@ export interface QuestionInterface {
   explanation: string;
   subQuestions?: string[];
   weight: number;
+  dependsOn?: number;
 }

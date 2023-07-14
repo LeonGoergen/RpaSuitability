@@ -6,7 +6,7 @@
       <p>{{content.text}}</p>
       <div class="buttons">
         <button class="redo-button" (click)="redo.emit()">Test Wiederholen</button>
-        <button class="contact-button" routerLink="/contact-page">Kontakt aufnehmen</button>
+        <button *ngIf="resultPercentage >= 30" class="contact-button" routerLink="/contact-page">Kontakt aufnehmen</button>
       </div>
     </li>
   </ol>
