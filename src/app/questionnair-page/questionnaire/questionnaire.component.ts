@@ -18,14 +18,30 @@ export class QuestionnaireComponent implements AfterViewChecked {
     this.renderer.setStyle(document.body, 'background', 'linear-gradient(180deg, #11998e 0%, #38ef7d 100%)');
   }
 
+// Update the onValueChange() method in questionnaire.component.ts
   onValueChange(weightedValue: number, questionId: number) {
     this.totalScore[questionId] = weightedValue;
+
+    // Recursively set dependent questions to a weighted value of 0 if the parent question is answered with "Nein"
+    if (weightedValue === 0) {
+      this.setDependentQuestionsToZero(questionId);
+    }
+
     const total = Object.values(this.totalScore).reduce((a, b) => a + b, 0);
     console.log('Total score:', total);
 
     if (this.areAllQuestionsAnswered()) {
       this.showResults = true; // Show the Results component when all questions are answered
     }
+  }
+
+// Add a helper method to recursively set dependent questions to a weighted value of 0
+  setDependentQuestionsToZero(questionId: number) {
+    const dependentQuestions = this.questions.filter(q => q.dependsOn === questionId);
+    dependentQuestions.forEach(dependentQuestion => {
+      this.totalScore[dependentQuestion.id] = 0;
+      this.setDependentQuestionsToZero(dependentQuestion.id); // Recursively set dependent questions of the dependent question
+    });
   }
 
   ngAfterViewChecked(): void {

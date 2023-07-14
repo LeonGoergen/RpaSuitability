@@ -7,7 +7,7 @@
 <div class="questionnaire-container">
   <ul class="questionnaire">
     <li *ngFor="let question of questions">
-      <div class="question">
+      <div class="question" [class.hide]="question.dependsOn && totalScore[question.dependsOn] === 0">
         <h2 class="question-actual">{{question.question}}<span class="question-icon" (click)="openExplanation(question.id)">?</span></h2>
         <div class="question-explanation" [class.open]="openQuestions.includes(question.id)">{{question.explanation}}
           <h5>Unterfragen:</h5>

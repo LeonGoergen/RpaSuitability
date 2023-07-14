@@ -26,7 +26,7 @@ export class ResultsComponent implements OnChanges {
       const totalScore = Object.values(this.totalScore).reduce((a, b) => a + b, 0);
       const totalPossibleScore = this.questions.reduce((total, question) => total + question.weight * 3, 0);
       this.resultPercentage = (totalScore / totalPossibleScore) * 100;
-      this.content = this.contentService.getContentByPercentage(this.resultPercentage);
+      this.content = this.contentService.getContentByPercentage(Math.round(this.resultPercentage));
     }
   }
 }

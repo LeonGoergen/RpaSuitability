@@ -21,7 +21,8 @@ export const questions: QuestionInterface[] = [
       'Werden wichtige Dateien oder Daten für den Prozess elektronisch gespeichert?',
       'Sind irgendwelche Teile des Prozesses online oder auf einer digitalen Plattform?'
     ],
-    weight: 10
+    weight: 10,
+    dependsOn: 1
   },
   {
     id: 3,
@@ -44,6 +45,7 @@ export const questions: QuestionInterface[] = [
       'Sind die Daten leicht zu finden oder sind sie hinter komplizierten Benutzeroberflächen verborgen?'
     ],
     weight: 4,
+    dependsOn: 2
   },
   {
     id: 5,
@@ -54,6 +56,7 @@ export const questions: QuestionInterface[] = [
       'Arbeitet der Prozess mit einer großen Menge an Informationen oder Daten?'
     ],
     weight: 5,
+    dependsOn: 2
   },
   {
     id: 6,
@@ -64,6 +67,7 @@ export const questions: QuestionInterface[] = [
       'Gibt es eine hohe Personalfluktuation im Prozess aufgrund von Monotonie oder Arbeitsbelastung?'
     ],
     weight: 1,
+    dependsOn: 5
   },
   {
     id: 7,
@@ -105,6 +109,7 @@ export const questions: QuestionInterface[] = [
       'Gibt es spezielle Datenschutz- oder Datensicherheitsanforderungen für Ihren Prozess?'
     ],
     weight: 3,
+    dependsOn: 9
   },
   {
     id: 11,
@@ -127,6 +132,7 @@ export const questions: QuestionInterface[] = [
       'Wurde die Dokumentation regelmäßig aktualisiert und spiegelt sie den aktuellen Prozessablauf wider?'
     ],
     weight: 2,
+    dependsOn: 1
   },
   {
     id: 13,
@@ -137,5 +143,6 @@ export const questions: QuestionInterface[] = [
       'Muss die Benutzeroberfläche von verwendeten Softwares in verschiedenen Sprachen eingestellt sein?'
     ],
     weight: 1,
+    dependsOn: 1
   },
 ];
