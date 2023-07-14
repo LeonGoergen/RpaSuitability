@@ -78,6 +78,7 @@ export const questions: QuestionInterface[] = [
       'Gibt es wenige Ausnahmen oder unvorhersehbare Ergebnisse in dem Prozess, den Sie automatisieren möchten?'
     ],
     weight: 8,
+    dependsOn: 1
   },
   {
     id: 8,
