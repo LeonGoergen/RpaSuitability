@@ -9,7 +9,7 @@ import { QuestionAnsweringButtonsComponent } from '../question-answering-buttons
 })
 export class QuestionnaireComponent implements AfterViewChecked {
   questions = questions;
-  totalScore: { [id: string]: number } = {};
+  questionScores: { [id: string]: number } = {};
   openQuestions: number[] = [];
   @ViewChildren(QuestionAnsweringButtonsComponent) buttonsComponents!: QueryList<QuestionAnsweringButtonsComponent>;
   showResults: boolean = false; // Track the visibility of the Results component
@@ -20,15 +20,15 @@ export class QuestionnaireComponent implements AfterViewChecked {
 
 // Update the onValueChange() method in questionnaire.component.ts
   onValueChange(weightedValue: number, questionId: number) {
-    this.totalScore[questionId] = weightedValue;
+    this.questionScores[questionId] = weightedValue;
 
     // Recursively set dependent questions to a weighted value of 0 if the parent question is answered with "Nein"
     if (weightedValue === 0) {
       this.setDependentQuestionsToZero(questionId);
     }
 
-    const total = Object.values(this.totalScore).reduce((a, b) => a + b, 0);
-    console.log('Total score:', total);
+    const total = Object.values(this.questionScores).reduce((a, b) => a + b, 0);
+    console.log('Total score:', this.questionScores);
 
     if (this.areAllQuestionsAnswered()) {
       this.showResults = true; // Show the Results component when all questions are answered
@@ -39,7 +39,7 @@ export class QuestionnaireComponent implements AfterViewChecked {
   setDependentQuestionsToZero(questionId: number) {
     const dependentQuestions = this.questions.filter(q => q.dependsOn === questionId);
     dependentQuestions.forEach(dependentQuestion => {
-      this.totalScore[dependentQuestion.id] = 0;
+      this.questionScores[dependentQuestion.id] = 0;
       this.setDependentQuestionsToZero(dependentQuestion.id); // Recursively set dependent questions of the dependent question
     });
   }
@@ -51,7 +51,7 @@ export class QuestionnaireComponent implements AfterViewChecked {
   }
 
   areAllQuestionsAnswered(): boolean {
-    return Object.keys(this.totalScore).length === this.questions.length;
+    return Object.keys(this.questionScores).length === this.questions.length;
   }
 
   openExplanation(questionId: number) {
@@ -64,7 +64,7 @@ export class QuestionnaireComponent implements AfterViewChecked {
   }
 
   resetQuestionnaire() {
-    this.totalScore = {};
+    this.questionScores = {};
     this.openQuestions = [];
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.buttonsComponents.forEach(component => component.reset());
