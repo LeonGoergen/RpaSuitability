@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class QuestionAnsweringButtonsComponent {
   @Input() questionId?: number;
   @Input() questionWeight?: number;
-  @Output() valueChange = new EventEmitter<number>();
+  @Output() valueChange = new EventEmitter<{ questionId: number, weightedValue: number }>();
 
   selectedValue: number | null = null;
 
@@ -16,7 +16,7 @@ export class QuestionAnsweringButtonsComponent {
     const weight = this.questionWeight || 1;
     const weightedValue = value * weight;
     this.selectedValue = value;
-    this.valueChange.emit(weightedValue);
+    this.valueChange.emit({ questionId: this.questionId || 0, weightedValue });
   }
 
   reset() {
