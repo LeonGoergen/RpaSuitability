@@ -39,8 +39,7 @@ export class QuestionnaireComponent implements AfterViewChecked {
       this.setDependentQuestionsToZero(questionId);
     }
 
-    const total = Object.values(this.questionScores).reduce((a, b) => a + b, 0);
-    console.log('Total score:', this.questionScores);
+    this.logQuestionnaireStats();
 
     if (this.areAllQuestionsAnswered()) {
       this.showResults = true; // Show the Results component when all questions are answered
@@ -61,6 +60,31 @@ export class QuestionnaireComponent implements AfterViewChecked {
     return dependentQuestions.map(q => q.id);
   }
 
+  logQuestionnaireStats() {
+    const answeredQuestions = Object.keys(this.questionScores).length;
+    const totalQuestions = this.questions.length;
+    const currentScore = Object.values(this.questionScores).reduce((a, b) => a + b, 0);
+    const currentPossibleScore = Object.values(this.questionScores).reduce((total, value) => {
+      const questionId = Object.keys(this.questionScores).find(k => this.questionScores[k] === value);
+      const question = questionId ? this.questions.find(q => q.id === parseInt(questionId)) : undefined;
+      if (question) {
+        return total + (question.weight * 3);
+      }
+      return total;
+    }, 0);
+    const currentPossibleScorePercentage = currentPossibleScore === 0 ? 0 : (currentScore / currentPossibleScore) * 100;
+    const answeredPercentage = (answeredQuestions / totalQuestions) * 100;
+
+    console.log(
+      `Current Score:\t\t\t\t\t\t\t${currentScore}\n` +
+      `Current Possible Score:\t\t\t\t\t${currentPossibleScore}\n` +
+      `Percentage of Current Possible Score:\t${currentPossibleScorePercentage.toFixed(2)}%\n\n` +
+      `Number of Questions Answered:\t\t\t${answeredQuestions}\n` +
+      `Total Questions:\t\t\t\t\t\t${totalQuestions}\n` +
+      `Percentage of Questions Answered:\t\t${answeredPercentage.toFixed(2)}%`
+    );
+  }
+
   removeDependentQuestions(questionId: number) {
     const dependentQuestions = this.getDependentQuestionIds(questionId);
     dependentQuestions.forEach(dependentQuestion => {
@@ -76,6 +100,10 @@ export class QuestionnaireComponent implements AfterViewChecked {
     const dependentQuestions = this.getDependentQuestionIds(questionId);
     dependentQuestions.forEach(dependentQuestion => {
       if (!this.visibleQuestions.includes(dependentQuestion)) {
+        const component = this.buttonsComponents.find(comp => comp.questionId === dependentQuestion);
+        if (component) {
+          component.selectedValue = null;
+        }
         delete this.questionScores[dependentQuestion];
         this.visibleQuestions.push(dependentQuestion);
         this.addDependentQuestions(dependentQuestion); // Recursively add dependent questions of the dependent question
