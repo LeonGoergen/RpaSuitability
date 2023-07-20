@@ -10,7 +10,7 @@ export const questions: QuestionInterface[] = [
       'Sind diese Prozesse strukturiert und folgen sie klaren Regeln?',
       'Erfordern diese Prozesse wenig menschliche Entscheidungsfindung?'
     ],
-    weight: 9
+    weight: 10
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const questions: QuestionInterface[] = [
       'Werden wichtige Dateien oder Daten für den Prozess elektronisch gespeichert?',
       'Sind irgendwelche Teile des Prozesses online oder auf einer digitalen Plattform?'
     ],
-    weight: 10,
+    weight: 9,
     dependsOn: 1
   },
   {
@@ -49,6 +49,18 @@ export const questions: QuestionInterface[] = [
   },
   {
     id: 5,
+    question: 'Nutzen sie bereits andere Automatisierungstechnologien?',
+    explanation: 'Diese Frage zielt darauf ab, zu ermitteln, ob Ihr Unternehmen bereits andere Formen der Automatisierung einsetzt. Die Verwendung anderer Automatisierungstechnologien kann darauf hindeuten, dass Ihr Unternehmen offen für technologische Innovationen ist und die Infrastruktur hat, um Automatisierungstechnologien zu unterstützen. Zudem könnte dies bedeuten, dass Ihr Unternehmen bereits Erfahrungen mit der Einführung und Integration neuer Technologien hat. Beispiele für andere Automatisierungstechnologien können sein: Workflow-Automatisierung, Automatisierung von Geschäftsprozessen, KI-Technologien usw.',
+    subQuestions: [
+      'Haben Sie bereits Workflow- oder Geschäftsprozessautomatisierungen implementiert?',
+      'Nutzt Ihr Unternehmen KI-Technologien oder maschinelles Lernen in irgendeiner Form?',
+      'Haben Sie Erfahrung mit der Einführung und Integration neuer Technologien?'
+    ],
+    weight: 2,
+    dependsOn: 2
+  },
+  {
+    id: 6,
     question: 'Liegt bei diesen Prozessen ein hohes zu verarbeitendes Daten- oder Prozessvolumen vor?',
     explanation: 'Diese Frage zielt darauf ab, das Volumen der Daten oder Prozesse zu ermitteln, die in Ihrem Unternehmen verarbeitet werden müssen. Robotic Process Automation (RPA) ist besonders nützlich für Prozesse, die hohe Volumina an Daten oder Transaktionen verarbeiten müssen. Ein "hohes Volumen" kann dabei unterschiedlich definiert werden, je nach Art und Größe des Unternehmens, aber typischerweise sind dies Aufgaben, die täglich oder sogar stündlich wiederholt werden und eine große Menge an Informationen betreffen.',
     subQuestions: [
@@ -59,7 +71,7 @@ export const questions: QuestionInterface[] = [
     dependsOn: 2
   },
   {
-    id: 6,
+    id: 7,
     question: 'Sind viele Mitarbeiter an dem zu automatisierenden Prozess beteiligt?',
     explanation: 'Diese Frage soll feststellen, wie viele Personen in das Ausführen des zu automatisierenden Prozesses involviert sind. Je mehr Personen beteiligt sind, desto komplexer kann der Prozess sein und desto mehr Zeit könnte durch die Automatisierung eingespart werden. Ein Prozess, an dem viele Mitarbeiter beteiligt sind, könnte sich für RPA eignen, da hierdurch die manuellen Arbeitsaufwände reduziert und die Effizienz gesteigert werden könnte. Denken Sie dabei an Prozesse, die von verschiedenen Abteilungen, Teams oder sogar Standorten durchgeführt werden.',
     subQuestions: [
@@ -67,38 +79,29 @@ export const questions: QuestionInterface[] = [
       'Gibt es eine hohe Personalfluktuation im Prozess aufgrund von Monotonie oder Arbeitsbelastung?'
     ],
     weight: 1,
-    dependsOn: 5
+    dependsOn: 1
   },
   {
-    id: 7,
+    id: 8,
     question: 'Ist die Variation der verschiedenen Prozessausgänge niedrig?',
     explanation: 'Diese Frage prüft, ob der Ausgang des Prozesses, den Sie automatisieren möchten, vorhersehbar und konsistent ist. Robotic Process Automation (RPA) ist besonders gut geeignet für Prozesse, die zu vorhersagbaren und gleichbleibenden Ergebnissen führen. Wenn die Variationen in den Ausgängen Ihres Prozesses niedrig sind (d.h. die Ergebnisse sind in der Regel gleich oder sehr ähnlich), könnte RPA eine geeignete Lösung für Sie sein.',
     subQuestions: [
       'Führt der Prozess in der Regel zu einem gleichbleibenden oder vorhersagbaren Ergebnis?',
       'Gibt es wenige Ausnahmen oder unvorhersehbare Ergebnisse in dem Prozess, den Sie automatisieren möchten?'
     ],
-    weight: 8,
+    weight: 6,
     dependsOn: 1
   },
   {
-    id: 8,
+    id: 9,
     question: "Sind diese Prozesse sehr fehleranfällig?",
     explanation: "Robotic Process Automation (RPA) kann dazu beitragen, die Genauigkeit von Prozessen zu erhöhen und Fehler zu reduzieren, besonders wenn diese Prozesse repetitive und datenintensive Aufgaben beinhalten. Daher könnte die Verwendung von RPA besonders nützlich sein, wenn Ihre Prozesse anfällig für menschliche Fehler sind. Denken Sie bei dieser Frage an die Fehlerquote in Ihren Prozessen.",
     subQuestions: [
       "Haben Ihre Prozesse eine hohe Fehlerquote?",
       "Sind die Fehler in Ihren Prozessen überwiegend menschlicher Natur?"
     ],
-    weight: 3
-  },
-  {
-    id: 9,
-    question: "Verarbeiten diese Prozesse sensible Daten?",
-    explanation: "RPA kann dazu beitragen, die Sicherheit und Genauigkeit beim Umgang mit sensiblen Daten zu erhöhen, da Bots konsequent die vorgeschriebenen Sicherheitsprotokolle befolgen. Denken Sie bei dieser Frage an die Art der Daten, die sie verarbeiten und ob es strenge Sicherheitsprotokolle für den Umgang mit den in den Prozessen verwendeten Daten gibt.",
-    subQuestions: [
-      "Werden in Ihren Prozessen sensible Daten verarbeitet?",
-      "Gibt es strenge Sicherheitsprotokolle für den Umgang mit den in den Prozessen verwendeten Daten?"
-    ],
-    weight: 3
+    weight: 3,
+    dependsOn: 1
   },
   {
     id: 10,
@@ -110,18 +113,18 @@ export const questions: QuestionInterface[] = [
       'Gibt es spezielle Datenschutz- oder Datensicherheitsanforderungen für Ihren Prozess?'
     ],
     weight: 3,
-    dependsOn: 9
+    dependsOn: 1
   },
   {
     id: 11,
-    question: 'Nutzen sie bereits andere Automatisierungstechnologien?',
-    explanation: 'Diese Frage zielt darauf ab, zu ermitteln, ob Ihr Unternehmen bereits andere Formen der Automatisierung einsetzt. Die Verwendung anderer Automatisierungstechnologien kann darauf hindeuten, dass Ihr Unternehmen offen für technologische Innovationen ist und die Infrastruktur hat, um Automatisierungstechnologien zu unterstützen. Zudem könnte dies bedeuten, dass Ihr Unternehmen bereits Erfahrungen mit der Einführung und Integration neuer Technologien hat. Beispiele für andere Automatisierungstechnologien können sein: Workflow-Automatisierung, Automatisierung von Geschäftsprozessen, KI-Technologien usw.',
+    question: "Verarbeiten diese Prozesse sensible Daten?",
+    explanation: "RPA kann dazu beitragen, die Sicherheit und Genauigkeit beim Umgang mit sensiblen Daten zu erhöhen, da Bots konsequent die vorgeschriebenen Sicherheitsprotokolle befolgen. Sensible Daten sind Informationen, die, wenn sie nicht richtig geschützt werden, eine Person oder Organisation potenziell schädigen könnten. Sie können sich auf persönliche, finanzielle, gesundheitliche oder andere Arten von Informationen beziehen, die unter speziellen gesetzlichen oder regulatorischen Schutzbedingungen stehen. Denken Sie bei dieser Frage an die Art der Daten, die sie verarbeiten und ob es strenge Sicherheitsprotokolle für den Umgang mit den in den Prozessen verwendeten Daten gibt.",
     subQuestions: [
-      'Haben Sie bereits Workflow- oder Geschäftsprozessautomatisierungen implementiert?',
-      'Nutzt Ihr Unternehmen KI-Technologien oder maschinelles Lernen in irgendeiner Form?',
-      'Haben Sie Erfahrung mit der Einführung und Integration neuer Technologien?'
+      "Werden in Ihren Prozessen sensible Daten verarbeitet?",
+      "Gibt es strenge Sicherheitsprotokolle für den Umgang mit den in den Prozessen verwendeten Daten?"
     ],
-    weight: 2,
+    weight: 3,
+    dependsOn: 10
   },
   {
     id: 12,
