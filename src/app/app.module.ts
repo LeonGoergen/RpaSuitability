@@ -16,6 +16,8 @@ import { ContactFormComponent } from './contact-page/contact-form/contact-form.c
 import {MatSliderModule} from "@angular/material/slider";
 import { ContentSliderComponent } from './home-page/content-slider/content-slider.component';
 import {AboutUsComponent} from "./contact-page/about-us/about-us.component";
+import { HttpClientModule } from '@angular/common/http';
+import { DatabaseComponent } from './database/database.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import {AboutUsComponent} from "./contact-page/about-us/about-us.component";
     ContactFormComponent,
     ContentSliderComponent,
     AboutUsComponent,
+    DatabaseComponent,
   ],
     imports: [
         BrowserModule,
@@ -37,7 +40,8 @@ import {AboutUsComponent} from "./contact-page/about-us/about-us.component";
         MatDialogModule,
         AppRoutingModule,
         NgOptimizedImage,
-        MatSliderModule
+        MatSliderModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

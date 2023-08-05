@@ -1,0 +1,45 @@
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>User IP</th>
+    <th>Timestamp</th>
+    <!-- Include headers for each question score -->
+    <th>Score 1</th>
+    <th>Score 2</th>
+    <th>Score 3</th>
+    <th>Score 4</th>
+    <th>Score 5</th>
+    <th>Score 6</th>
+    <th>Score 7</th>
+    <th>Score 8</th>
+    <th>Score 9</th>
+    <th>Score 10</th>
+    <th>Score 11</th>
+    <th>Score 12</th>
+    <th>Score 13</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let result of results">
+    <td>{{ getProperty(result, '_id') }}</td>
+    <td>{{ getProperty(result, 'userIP') }}</td>
+    <td>{{ getProperty(result, 'timestamp') }}</td>
+    <!-- Include data cells for each question score -->
+    <td>{{ getProperty(result, 'questionScores', '1') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '2') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '3') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '4') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '5') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '6') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '7') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '8') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '9') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '10') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '11') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '12') }}</td>
+    <td>{{ getProperty(result, 'questionScores', '13') }}</td>
+    <!-- ... Add more data cells as needed -->
+  </tr>
+  </tbody>
+</table>
