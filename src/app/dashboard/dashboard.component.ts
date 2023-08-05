@@ -1,18 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
 import {ServerCommunicationService} from "../services/server-communication.service";
-import {questions} from "../../assets/questions";
 import {QuestionInterface} from "../../assets/question-interface";
+import {questions} from "../../assets/questions";
 
 @Component({
-  selector: 'app-database',
-  templateUrl: './database.component.html',
-  styleUrls: ['./database.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class DatabaseComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   results: any = [];
   answers = ["Nein", "Eher Nein", "Eher Ja", "Ja"]
 
-  constructor(private serverCommunicationService: ServerCommunicationService) { }
+  constructor(private serverCommunicationService: ServerCommunicationService, private renderer: Renderer2) {
+    this.renderer.setStyle(document.body, 'background', 'linear-gradient(270deg, rgba(17, 153, 142, 0.3) 0%, rgba(56, 239, 125, 0.3) 100%)');
+  }
 
   ngOnInit(): void {
     this.serverCommunicationService.getAllResults()
@@ -44,6 +46,4 @@ export class DatabaseComponent implements OnInit {
     const question = questions.find(q => q.id === id);
     return question || null;
   }
-
-
 }

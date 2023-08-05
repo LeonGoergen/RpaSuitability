@@ -17,7 +17,7 @@ import {MatSliderModule} from "@angular/material/slider";
 import { ContentSliderComponent } from './home-page/content-slider/content-slider.component';
 import {AboutUsComponent} from "./contact-page/about-us/about-us.component";
 import { HttpClientModule } from '@angular/common/http';
-import { DatabaseComponent } from './database/database.component';
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { DatabaseComponent } from './database/database.component';
     ContactFormComponent,
     ContentSliderComponent,
     AboutUsComponent,
-    DatabaseComponent,
+    DashboardComponent,
   ],
     imports: [
         BrowserModule,
