@@ -18,6 +18,7 @@ import { ContentSliderComponent } from './home-page/content-slider/content-slide
 import {AboutUsComponent} from "./contact-page/about-us/about-us.component";
 import { HttpClientModule } from '@angular/common/http';
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import { ChartComponent } from './dashboard/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
     ContentSliderComponent,
     AboutUsComponent,
     DashboardComponent,
+    ChartComponent,
   ],
     imports: [
         BrowserModule,

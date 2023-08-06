@@ -1,0 +1,32 @@
+#myChart {
+  width: 80vw;
+  max-height: 50vh;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.dropdown-selection {
+  width: 80vw;
+  margin: 20px auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.dropdown-selection label {
+  margin-right: 10px;
+}
+
+.form-select {
+  width: auto;
+  padding: 5px 10px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}

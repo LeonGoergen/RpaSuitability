@@ -1,0 +1,12 @@
+<div class="dropdown-selection">
+  <label for="timeRange">Zeitraum:</label>
+  <select class="form-select" id="timeRange" (change)="onTimeRangeChange($event)">
+    <option value="0.0416666667">Letzte Stunde</option>
+    <option value="24">Letzte 24 Stunden</option>
+    <option value="7">Letzte 7 Tage</option>
+    <option value="30">Letzter Monat</option>
+    <option value="365">Letztes Jahr</option>
+  </select>
+</div>
+
+<canvas id="myChart"></canvas>
