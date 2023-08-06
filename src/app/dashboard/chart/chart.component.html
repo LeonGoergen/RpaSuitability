@@ -1,6 +1,7 @@
 <div class="dropdown-selection">
   <label for="timeRange">Zeitraum:</label>
   <select class="form-select" id="timeRange" (change)="onTimeRangeChange($event)">
+    <option value="" disabled selected style="display:none;"></option>
     <option value="0.0416666667">Letzte Stunde</option>
     <option value="24">Letzte 24 Stunden</option>
     <option value="7">Letzte 7 Tage</option>
@@ -10,3 +11,5 @@
 </div>
 
 <canvas id="myChart"></canvas>
+
+<p>Im dem ausgewählten Zeitraum wurden {{ numberOfQuestionnaires }} Fragebögen ausgefüllt</p>

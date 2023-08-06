@@ -8,10 +8,11 @@ import {Chart, ChartConfiguration, registerables} from "chart.js";
 })
 export class ChartComponent implements OnInit, OnChanges {
   @Input() properties: any = [];
-  selectedTimeRange: number = 0.0416666667;
+  selectedTimeRange: number = 0;
   chart: Chart | null = null;
   labels: string[] = [];
   data: number[] = [];
+  numberOfQuestionnaires: number = 0;
 
   constructor(private cdRef: ChangeDetectorRef) { }
 
@@ -31,33 +32,72 @@ export class ChartComponent implements OnInit, OnChanges {
     this.cdRef.detectChanges();
   }
 
-  createChartWithData() {
+  generateTimestamps(timeRange: number): string[] {
     const now = new Date();
-    const dataByDate = this.properties.reduce((accum: any, curr: any) => {
-      const date = new Date(curr.timestamp);
+    const timestamps = [this.formatDate(now, timeRange)];
+    const totalSegments = 6;
 
-      if (isNaN(date.getTime())) {
-        return accum;
+    for (let i = 0; i < totalSegments; i++) {
+      if (timeRange === 0.0416666667) { // Letzte Stunde
+        now.setMinutes(now.getMinutes() - 10);
+      } else if (timeRange === 24) { // Letzte 24 Stunden
+        now.setHours(now.getHours() - 4);
+      } else if (timeRange === 7) { // Letzte 7 Tage
+        now.setDate(now.getDate() - 1);
+      } else if (timeRange === 30) { // Letzter Monat
+        now.setDate(now.getDate() - 5);
+      } else if (timeRange === 365) { // Letztes Jahr
+        now.setMonth(now.getMonth() - 2);
       }
 
-      const diffInDays = Math.round((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
-      if (diffInDays > this.selectedTimeRange) {
-        return accum;
+      timestamps.unshift(this.formatDate(now, timeRange));
+    }
+
+    return timestamps;
+  }
+
+  formatDate(date: Date, timeRange: number): string {
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // months are zero indexed
+    const year = date.getFullYear();
+    const hour = date.getHours();
+    const minutes = date.getMinutes();
+
+    if (timeRange <= 0.0416666667) { // If less than or equal to 1 hour
+      return `${day}.${month}.${year} ${hour}:${minutes}`;
+    } else if (timeRange <= 24) { // If less than or equal to 24 hours
+      return `${day}.${month}.${year} ${hour}:00`;
+    } else { // If more than 24 hours
+      return `${day}.${month}.${year}`;
+    }
+  }
+
+  createChartWithData() {
+    this.labels = this.generateTimestamps(this.selectedTimeRange);
+
+    const intervals = this.labels.map(label => {
+      const [day, month, year, hour, minute] = label.split(/[. :]/).map(Number);
+      return new Date(year, month - 1, day, hour || 0, minute || 0);
+    });
+
+    this.data = new Array(this.labels.length).fill(0);
+
+    for (let i = 0; i < this.properties.length; i++) {
+      const date = new Date(this.properties[i].timestamp);
+
+      for (let j = 0; j < intervals.length - 1; j++) {
+        if (date >= intervals[j] && date < intervals[j + 1]) {
+          this.data[j]++;
+          break;
+        }
       }
 
-      const key = `${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()}`;
-
-      if (!accum[key]) {
-        accum[key] = 0;
+      if (date >= intervals[intervals.length - 1]) {
+        this.data[this.data.length - 1]++;
       }
+    }
 
-      accum[key]++;
-      return accum;
-    }, {});
-
-    this.labels = Object.keys(dataByDate).sort();
-    this.data = this.labels.map(label => dataByDate[label]);
-
+    this.numberOfQuestionnaires = this.data.reduce((a, b) => a + b, 0);
     this.createChart();
   }
 
