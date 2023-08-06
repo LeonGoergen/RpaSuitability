@@ -2,8 +2,6 @@ import {Component, OnInit, Renderer2} from '@angular/core';
 import {ServerCommunicationService} from "../services/server-communication.service";
 import {QuestionInterface} from "../../assets/question-interface";
 import {questions} from "../../assets/questions";
-import {Chart, ChartConfiguration, registerables} from "chart.js";
-import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
