@@ -1,0 +1,24 @@
+<div class="fa-table">
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Timestamp</th>
+        <th *ngFor="let question of questionsId">{{ question }}</th>
+        <th>Score</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let result of properties">
+        <td>{{ getProperty(result, '_id') }}</td>
+        <td>{{ getUserId(getProperty(result, 'userIP')) }}</td>
+        <td>{{ getProperty(result, 'timestamp') | date:'dd.MM.yyyy, HH:mm' }}</td>
+        <td *ngFor="let question of questionsId">{{ getAnswer(result, String(question)) }}</td>
+        <td>{{ getScore(result) }}%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

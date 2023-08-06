@@ -1,53 +1,8 @@
-<div class="fa-table">
-  <div class="table-container">
-  <table>
-    <thead>
-    <tr>
-      <th>Frage</th>
-      <th>Nein</th>
-      <th>Eher Nein</th>
-      <th>Eher Ja</th>
-      <th>Ja</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let question of questionsId">
-      <td>{{getQuestionById(question)?.question}}</td>
-      <td *ngFor="let answerType of answers">
-        {{ calculateAnswerCount(question, answerType).answerPercentage }}%
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  </div>
-</div>
-
 <p class="total-entries-text">Bisher wurden insgesamt {{getTotalEntries()}} Umfragen ausgeführt.</p>
 
-<div class="fa-table">
-  <div class="table-container">
-  <table>
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>User ID</th>
-      <th>Timestamp</th>
-      <th *ngFor="let question of questionsId">{{ question }}</th>
-      <th>Score</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let result of properties">
-      <td>{{ getProperty(result, '_id') }}</td>
-      <td>{{ getUserId(getProperty(result, 'userIP')) }}</td>
-      <td>{{ getProperty(result, 'timestamp') | date:'dd.MM.yyyy, HH:mm' }}</td>
-      <td *ngFor="let question of questionsId">{{ getAnswer(result, String(question)) }}</td>
-      <td>{{ getScore(result) }}%</td>
-    </tr>
-    </tbody>
-  </table>
-  </div>
-</div>
+<app-question-table [properties]="properties"></app-question-table>
+
+<app-user-table [properties]="properties" [userIdMap]="userIdMap"></app-user-table>
 
 <app-chart [properties]="properties"></app-chart>
 

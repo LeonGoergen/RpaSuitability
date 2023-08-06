@@ -1,0 +1,23 @@
+<div class="fa-table">
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Frage</th>
+        <th>Nein</th>
+        <th>Eher Nein</th>
+        <th>Eher Ja</th>
+        <th>Ja</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let question of questionsId">
+        <td>{{getQuestionById(question)?.question}}</td>
+        <td *ngFor="let answerType of answers">
+          {{ calculateAnswerCount(question, answerType).answerPercentage }}%
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

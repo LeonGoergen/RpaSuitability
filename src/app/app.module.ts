@@ -19,6 +19,8 @@ import {AboutUsComponent} from "./contact-page/about-us/about-us.component";
 import { HttpClientModule } from '@angular/common/http';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import { ChartComponent } from './dashboard/chart/chart.component';
+import { QuestionTableComponent } from './dashboard/question-table/question-table.component';
+import { UserTableComponent } from './dashboard/user-table/user-table.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { ChartComponent } from './dashboard/chart/chart.component';
     AboutUsComponent,
     DashboardComponent,
     ChartComponent,
+    QuestionTableComponent,
+    UserTableComponent,
   ],
     imports: [
         BrowserModule,
