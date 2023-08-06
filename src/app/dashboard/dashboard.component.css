@@ -1,3 +1,43 @@
+/* This applies to all available scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dcdcdc;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bbbbbb;
+}
+
+.table-container {
+  overflow: auto;
+  max-height: 60vh;
+  scrollbar-width: thin; /* "thin" for slim scrollbar, "none" for no scrollbar */
+  scrollbar-color: #888 #f1f1f1; /* First color is the thumb, second is the track */
+}
+
+.fa-table {
+  width: 80vw;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -6,9 +46,74 @@ table {
 th, td {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 16px;
+}
+
+tr {
+  transition: all 0.25s ease-in-out;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+thead {
+  position: sticky;
+  top: -2px;
+}
+
+thead tr {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #82a182;
 }
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+#myChart {
+  width: 80vw;
+  height: 50vh;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.dropdown-selection {
+  width: 80vw;
+  margin: 20px auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.dropdown-selection label {
+  margin-right: 10px;
+}
+
+.form-select {
+  width: auto;
+  padding: 5px 10px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.total-entries-text {
+  width: 80vw;
+  margin: 0 auto 20px;
+  text-align: center;
+  font-size: 1.4em;
+  color: #2c3e50;
 }
