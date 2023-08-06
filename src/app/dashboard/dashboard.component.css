@@ -79,7 +79,7 @@ tr:nth-child(odd) {
 
 #myChart {
   width: 80vw;
-  height: 50vh;
+  max-height: 50vh;
   margin: 20px auto;
   display: flex;
   justify-content: center;
