@@ -1,8 +1,29 @@
-<p class="total-entries-text">Bisher wurden insgesamt {{getTotalEntries()}} Umfragen ausgeführt.</p>
+<!-- An introduction to the overall function of the dashboard -->
+<p class="info-text">
+  Herzlich willkommen im Dashboard unserer Umfrageanwendung. Hier können Sie die Ergebnisse aller bisher durchgeführten Umfragen einsehen.
+  Bislang wurden insgesamt {{getTotalEntries()}} Umfragen ausgeführt.
+</p>
+
+<p class="info-text">
+  Unten finden Sie eine Tabelle, die eine Übersicht über die Antworten auf die einzelnen Fragen bietet.
+  Für jede Frage wird die prozentuale Verteilung der vier möglichen Antworten "Nein", "Eher Nein", "Eher Ja" und "Ja" angezeigt.
+  Diese Darstellung ermöglicht es, auf einen Blick zu erkennen, wie die Teilnehmer auf die einzelnen Fragen geantwortet haben.
+</p>
 
 <app-question-table [properties]="properties"></app-question-table>
 
+<p class="info-text">
+  Die nachfolgende Tabelle bietet eine detailliertere Ansicht der Umfrageergebnisse.
+  Sie listet jede einzelne Umfrage auf, die von den Benutzern abgeschlossen wurde.
+  Die Tabelle enthält die ID der Umfrage, die eindeutige Benutzer-ID, den Zeitstempel der Umfrage und die Antworten auf jede Frage.
+  Am Ende jeder Zeile wird ein Gesamtscore angezeigt, der auf den Antworten des Benutzers auf die Fragen basiert.
+</p>
+
 <app-user-table [properties]="properties" [userIdMap]="userIdMap"></app-user-table>
 
-<app-chart [properties]="properties"></app-chart>
+<p class="info-text">
+  Unter den Tabellen finden Sie ein Diagramm, das eine visuelle Darstellung der Umfrageergebnisse bietet.
+  Es bietet eine grafische Übersicht über die Anzahl der abgeschlossenen Fragebogen, in einer gewissen Zeitspanne.
+</p>
 
+<app-chart [properties]="properties"></app-chart>

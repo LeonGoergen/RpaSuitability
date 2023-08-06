@@ -21,9 +21,9 @@
   background: #bbbbbb;
 }
 
-.total-entries-text {
+.info-text {
   width: 80vw;
-  margin: 0 auto 20px;
+  margin: 30px auto;
   text-align: center;
   font-size: 1.4em;
   color: #2c3e50;

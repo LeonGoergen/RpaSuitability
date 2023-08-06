@@ -15,7 +15,7 @@ import {NgOptimizedImage} from "@angular/common";
 import { ContactFormComponent } from './contact-page/contact-form/contact-form.component';
 import {MatSliderModule} from "@angular/material/slider";
 import { ContentSliderComponent } from './home-page/content-slider/content-slider.component';
-import {AboutUsComponent} from "./contact-page/about-us/about-us.component";
+import {AboutUsComponent} from "./home-page/about-us/about-us.component";
 import { HttpClientModule } from '@angular/common/http';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import { ChartComponent } from './dashboard/chart/chart.component';
