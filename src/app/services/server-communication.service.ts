@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class ServerCommunicationService {
-  private url = 'http://localhost:5000';
+  private url = 'https://rpa-backend-gamma.vercel.app';
 
   constructor(private http: HttpClient) { }
 
