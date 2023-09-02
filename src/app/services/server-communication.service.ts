@@ -7,13 +7,13 @@ import {SessionService} from "./session.service";
 })
 export class ServerCommunicationService {
   private url = 'https://rpa-backend-gamma.vercel.app';
+  //private url = 'http://localhost:9001';
 
   constructor(private http: HttpClient, private sessionService: SessionService) { }
 
   storeResults(scores: { [p: string]: number }) {
     const sessionToken = this.sessionService.getSessionToken();
     const data = { userToken: sessionToken, questionScores: scores }
-    console.log(data)
     return this.http.post(this.url + '/store-results', data);
   }
 

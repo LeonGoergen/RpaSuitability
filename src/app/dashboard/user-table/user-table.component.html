@@ -13,7 +13,7 @@
       <tbody>
       <tr *ngFor="let result of properties">
         <td>{{ getProperty(result, '_id') }}</td>
-        <td>{{ getUserId(getProperty(result, 'userIP')) }}</td>
+        <td>{{ getUserId(getProperty(result, 'userToken')) }}</td>
         <td>{{ getProperty(result, 'timestamp') | date:'dd.MM.yyyy, HH:mm' }}</td>
         <td *ngFor="let question of questionsId">{{ getAnswer(result, String(question)) }}</td>
         <td>{{ getScore(result) }}%</td>

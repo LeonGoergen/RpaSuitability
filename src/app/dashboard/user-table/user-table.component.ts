@@ -34,12 +34,12 @@ export class UserTableComponent {
     return Math.round(score / totalPossibleScore * 100);
   }
 
-  getUserId(ipAddress: string) {
-    if (!this.userIdMap.has(ipAddress)) {
+  getUserId(userToken: string) {
+    if (!this.userIdMap.has(userToken)) {
       return '0';
     }
 
-    return this.userIdMap.get(ipAddress);
+    return this.userIdMap.get(userToken);
   }
 
   protected readonly String = String;

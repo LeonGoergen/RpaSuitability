@@ -38,12 +38,12 @@ export class DashboardComponent implements OnInit {
     let id = 1;
 
     for (let property of this.properties) {
-      let ipAddress = this.getProperty(property, 'userIP');
-      if (!this.userIdMap.has(ipAddress)) {
-        this.userIdMap.set(ipAddress, id.toString());
+      let userToken = this.getProperty(property, 'userToken');
+      if (!this.userIdMap.has(userToken)) {
+        this.userIdMap.set(userToken, id.toString());
         id++;
-      } else if (ipAddress === 'undefined') {
-        this.userIdMap.set(ipAddress, 'NaN');
+      } else if (userToken === 'undefined') {
+        this.userIdMap.set(userToken, 'NaN');
       }
     }
   }
@@ -69,7 +69,7 @@ export class DashboardComponent implements OnInit {
 
   getQuestionById(id: number): QuestionInterface | null {
     const question = questions.find(q => q.id === id);
-    return question || null;
+    return question ?? null;
   }
 
   protected readonly String = String;
