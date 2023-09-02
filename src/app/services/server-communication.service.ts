@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {SessionService} from "./session.service";
 
 @Injectable({
   providedIn: 'root'
@@ -7,14 +8,13 @@ import {HttpClient} from "@angular/common/http";
 export class ServerCommunicationService {
   private url = 'https://rpa-backend-gamma.vercel.app';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private sessionService: SessionService) { }
 
-  storeResults(data: { userIP: any; questionScores: { [p: string]: number } }) {
+  storeResults(scores: { [p: string]: number }) {
+    const sessionToken = this.sessionService.getSessionToken();
+    const data = { userToken: sessionToken, questionScores: scores }
+    console.log(data)
     return this.http.post(this.url + '/store-results', data);
-  }
-
-  getUserIP() {
-    return this.http.get('https://api.ipify.org?format=json');
   }
 
   getAllResults() {

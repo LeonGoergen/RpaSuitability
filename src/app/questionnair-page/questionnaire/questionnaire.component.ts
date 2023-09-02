@@ -41,27 +41,15 @@ export class QuestionnaireComponent implements AfterViewChecked {
     }
 
     if (this.areAllQuestionsAnswered()) {
-      this.showResults = true; // Show the Results component when all questions are answered
+      this.showResults = true;
       this.storeResultsInDatabase();
     }
   }
 
   storeResultsInDatabase() {
-    this.serverCommunicationService.getUserIP()
+    this.serverCommunicationService.storeResults(this.questionScores)
       .subscribe(
-        (response: any) => {
-          const userIP = response.ip;
-          const data = {
-            questionScores: this.questionScores,
-            userIP: userIP
-          };
-
-          this.serverCommunicationService.storeResults(data)
-            .subscribe(
-              response => console.log(response),
-              error => console.error(error)
-            );
-        },
+        response => console.log(response),
         error => console.error(error)
       );
   }
