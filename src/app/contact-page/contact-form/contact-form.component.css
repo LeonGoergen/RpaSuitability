@@ -2,14 +2,24 @@
   box-sizing: border-box;
 }
 
+.contact-form {
+  width: 98%;
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 form {
   width: 35vw;
   margin: 0 auto;
   padding: 20px;
-  background: linear-gradient(360deg, #11998e 0%, #38ef7d 100%);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  height: 75vh;
+}
+
+p {
+  font-family: Ubuntu, sans-serif;
+  font-size: 1.2rem;
 }
 
 label {
@@ -18,40 +28,60 @@ label {
   margin-top: 20px;
 }
 
-input[type="text"], input[type="email"], textarea {
+.sameRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sameRow > div {
+  width: 48%;
+}
+
+input[type="text"], input[type="email"] {
   width: 100%;
   box-sizing: border-box;
-  padding: 10px;
-  border: 2px solid #ddd;
-  border-radius: 3px;
-  height: 7vh;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  height: 4vh;
   margin-bottom: 2vh;
   font-family: Ubuntu, sans-serif;
   font-size: 1rem;
+  padding-bottom: 20px;
+  padding-top: calc(5vh - 20px);
 }
 
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-  border-color: #449D44;
   outline: none;
 }
 
 textarea {
-  min-height: 25vh;
-  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  margin-bottom: 2vh;
   font-family: Ubuntu, sans-serif;
   font-size: 1rem;
+  padding-bottom: 20px;
+  padding-top: calc(12.5vh - 20px);
+  height: 15vh;
+  resize: none;
 }
 
 button {
   display: block;
-  width: 100%;
+  width: 30%;
   padding: 10px;
-  color: #1f1f1f;
-  background-color: #38ef7d;
+  color: #ffffff;
+  background-color: #82a182;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  height: 7vh;
+  margin-left: 70%;
+  height: 5vh;
 }
 
 button:hover {
@@ -60,6 +90,7 @@ button:hover {
 
 input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
   background-color: #FFCCCC;
+  border-color: red;
 }
 
 @media screen and (min-width: 1600px) {
