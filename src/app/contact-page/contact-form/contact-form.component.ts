@@ -1,5 +1,6 @@
 import {Component, Renderer2} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {ServerCommunicationService} from "../../services/server-communication.service";
 
 @Component({
   selector: 'app-contact-form',
@@ -9,7 +10,9 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 export class ContactFormComponent {
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private renderer: Renderer2) {
+  constructor(private fb: FormBuilder,
+              private renderer: Renderer2,
+              private serverCommunicationService: ServerCommunicationService) {
     this.contactForm = this.fb.group({
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -20,11 +23,15 @@ export class ContactFormComponent {
   onSubmit(): void {
     if (this.contactForm.valid) {
       const { name, email, message } = this.contactForm.value;
-      console.log('Name:', name);
-      console.log('Email:', email);
-      console.log('Message:', message);
-      // TODO: Implement your service call here
-      this.contactForm.reset();
+      this.serverCommunicationService.storeMessage(name, email, message).subscribe(
+        response => {
+          console.log('Message stored:', response);
+          this.contactForm.reset();
+        },
+        error => {
+          console.log('Error storing message:', error);
+        }
+      );
     } else {
       console.log('Form is not valid.');
     }

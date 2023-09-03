@@ -1,0 +1,24 @@
+<div class="fa-table">
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Timestamp</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Nachricht</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let message of messages">
+        <td>{{ getUserId(getProperty(message, 'userToken')) }}</td>
+        <td>{{ getProperty(message, 'timestamp') | date:'dd.MM.yyyy, HH:mm' }}</td>
+        <td>{{ getProperty(message, 'name') }}</td>
+        <td>{{ getProperty(message, 'email') }}</td>
+        <td>{{ getProperty(message, 'message') }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

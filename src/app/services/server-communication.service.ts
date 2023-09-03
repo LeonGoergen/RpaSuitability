@@ -7,7 +7,7 @@ import {SessionService} from "./session.service";
 })
 export class ServerCommunicationService {
   private url = 'https://rpa-backend-gamma.vercel.app';
-  //private url = 'http://localhost:9001';
+  //private url = 'http://localhost:9002';
 
   constructor(private http: HttpClient, private sessionService: SessionService) { }
 
@@ -19,5 +19,15 @@ export class ServerCommunicationService {
 
   getAllResults() {
     return this.http.get(this.url + '/all-results');
+  }
+
+  storeMessage(name: string, email: string, message: string) {
+    const sessionToken = this.sessionService.getSessionToken();
+    const data = { userToken: sessionToken, name: name, email: email, message: message }
+    return this.http.post(this.url + '/store-message', data);
+  }
+
+  getAllMessages() {
+    return this.http.get(this.url + '/all-messages');
   }
 }

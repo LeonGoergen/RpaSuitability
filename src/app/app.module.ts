@@ -21,6 +21,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import { ChartComponent } from './dashboard/chart/chart.component';
 import { QuestionTableComponent } from './dashboard/question-table/question-table.component';
 import { UserTableComponent } from './dashboard/user-table/user-table.component';
+import { MessageTableComponent } from './dashboard/message-table/message-table.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { UserTableComponent } from './dashboard/user-table/user-table.component'
     ChartComponent,
     QuestionTableComponent,
     UserTableComponent,
+    MessageTableComponent,
   ],
     imports: [
         BrowserModule,
