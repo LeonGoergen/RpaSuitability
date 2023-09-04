@@ -33,8 +33,8 @@ export class DashboardComponent implements OnInit {
     this.serverCommunicationService.getAllMessages()
       .subscribe(
         data => {
-          console.log(data)
           this.messages = data;
+          this.createUserIdMap();
         },
         error => console.error(error)
       );
@@ -47,8 +47,10 @@ export class DashboardComponent implements OnInit {
   createUserIdMap() {
     let id = 1;
 
-    for (let property of this.properties) {
-      let userToken = this.getProperty(property, 'userToken');
+    const combinedData = [...this.properties, ...this.messages];
+
+    for (let item of combinedData) {
+      let userToken = this.getProperty(item, 'userToken');
       if (!this.userIdMap.has(userToken)) {
         this.userIdMap.set(userToken, id.toString());
         id++;
