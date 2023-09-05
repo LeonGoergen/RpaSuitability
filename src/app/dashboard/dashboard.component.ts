@@ -54,6 +54,14 @@ export class DashboardComponent implements OnInit {
     return this.properties.length;
   }
 
+  getAverageRating() {
+    let sum = 0;
+    for (let item of this.ratings) {
+      sum += this.getProperty(item, 'rating');
+    }
+    return (sum / this.ratings.length).toFixed(2);
+  }
+
   createUserIdMap() {
     let id = 1;
 
