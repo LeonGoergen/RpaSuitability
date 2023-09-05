@@ -15,7 +15,6 @@ import {NgOptimizedImage} from "@angular/common";
 import { ContactFormComponent } from './contact-page/contact-form/contact-form.component';
 import {MatSliderModule} from "@angular/material/slider";
 import { ContentSliderComponent } from './home-page/content-slider/content-slider.component';
-import {AboutUsComponent} from "./home-page/about-us/about-us.component";
 import { HttpClientModule } from '@angular/common/http';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import { ChartComponent } from './dashboard/chart/chart.component';
@@ -25,6 +24,7 @@ import { MessageTableComponent } from './dashboard/message-table/message-table.c
 import { RatingFormComponent } from './contact-page/rating-form/rating-form.component';
 import { MapComponentComponent } from './contact-page/map-component/map-component.component';
 import { RatingsTableComponent } from './dashboard/ratings-table/ratings-table.component';
+import { RatingsSliderComponent } from './home-page/ratings-slider/ratings-slider.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,6 @@ import { RatingsTableComponent } from './dashboard/ratings-table/ratings-table.c
     ContactComponent,
     ContactFormComponent,
     ContentSliderComponent,
-    AboutUsComponent,
     DashboardComponent,
     ChartComponent,
     QuestionTableComponent,
@@ -46,6 +45,7 @@ import { RatingsTableComponent } from './dashboard/ratings-table/ratings-table.c
     RatingFormComponent,
     MapComponentComponent,
     RatingsTableComponent,
+    RatingsSliderComponent,
   ],
     imports: [
         BrowserModule,

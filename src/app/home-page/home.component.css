@@ -119,6 +119,44 @@ body {
   text-align: right;
 }
 
+.container {
+  max-width: 70vw;
+  margin: 0 auto;
+  padding: 0 15px;
+
+}
+
+.about-us {
+  margin-top: 50px;
+  text-align: justify;
+}
+
+.title, .subtitle {
+  color: #0F4C81; /* dunkles Blau, ähnlich dem Logo der Universität Rostock */
+  font-weight: bold;
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.slider-container {
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
 @media screen and (min-width: 1600px) {
   .info-box h2 {
     font-size: 2rem;
