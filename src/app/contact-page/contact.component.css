@@ -1,7 +1,7 @@
 .container {
   font-family: 'Helvetica', sans-serif;
   display: flex;
-  width: 70%;
+  width: 75%;
   margin: 0 auto;
   border-radius: 10px;
 }
