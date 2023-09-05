@@ -8,7 +8,6 @@ import {ServerCommunicationService} from "../../services/server-communication.se
 })
 export class RatingsSliderComponent implements OnInit, AfterViewInit {
   ratings: any = [];
-  allRatings: any[] = [];
   speed = 20;
 
   @ViewChild('sliderWrapper') sliderWrapper!: ElementRef;
@@ -18,7 +17,6 @@ export class RatingsSliderComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.serverCommunicationService.getAllRatings().subscribe(data => {
       this.ratings = data;
-      this.allRatings = [...this.ratings, ...this.ratings]; // duplicate
     });
   }
 
