@@ -1,7 +1,9 @@
 <div class="slider-container">
-  <div class="slide" *ngFor="let rating of visibleRatings">
-    <p>{{ getProperty(rating, 'title') }}</p>
-    <p>{{ getProperty(rating, 'rating') }}</p>
-    <p>{{ getProperty(rating, 'message') }}</p>
+  <div class="slider-wrapper" #sliderWrapper>
+    <div class="slide" *ngFor="let rating of allRatings">
+      <p>{{ getProperty(rating, 'title') }}</p>
+      <p>{{ getProperty(rating, 'rating') }}</p>
+      <p>{{ getProperty(rating, 'message') }}</p>
+    </div>
   </div>
 </div>

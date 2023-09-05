@@ -1,18 +1,19 @@
 .slider-container {
   display: flex;
   overflow: hidden;
-  animation: sliding 5s linear infinite;
+  width: 100%;
+}
+
+.slider-wrapper {
+  display: flex;
 }
 
 .slide {
-  min-width: 200px;
+  width: 200px;
   flex: 0 0 auto;
   padding: 10px;
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes sliding {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-20%); }
+  background-color: #FFFFFF;
+  border-radius: 5px;
 }

@@ -1,38 +1,54 @@
-import {AfterViewInit, Component, ElementRef, OnInit, Renderer2} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ServerCommunicationService} from "../../services/server-communication.service";
-import {animate, style, transition, trigger} from "@angular/animations";
-import {timer} from "rxjs";
 
 @Component({
   selector: 'app-ratings-slider',
   templateUrl: './ratings-slider.component.html',
   styleUrls: ['./ratings-slider.component.css']
 })
-export class RatingsSliderComponent implements OnInit {
+export class RatingsSliderComponent implements OnInit, AfterViewInit {
   ratings: any = [];
-  visibleRatings: any[] = [];
-  currentIndex = 0;
-  speed = 5000;  // 5 seconds
+  allRatings: any[] = [];
+  speed = 20;
+
+  @ViewChild('sliderWrapper') sliderWrapper!: ElementRef;
 
   constructor(private serverCommunicationService: ServerCommunicationService) { }
 
   ngOnInit(): void {
     this.serverCommunicationService.getAllRatings().subscribe(data => {
       this.ratings = data;
-      this.visibleRatings = this.ratings.slice(0, 5);
-      this.startSliding();
+      this.allRatings = [...this.ratings, ...this.ratings]; // duplicate
     });
   }
 
+  ngAfterViewInit(): void {
+    this.startSliding();
+  }
+
   startSliding() {
+    const sliderWrapperEl = this.sliderWrapper.nativeElement;
+    let offset = 0;
+
     setInterval(() => {
-      this.currentIndex++;
-      if (this.currentIndex >= this.ratings.length) {
-        this.currentIndex = 0;
+      offset -= 1; // Adjust the speed if needed
+
+      if (-offset >= 210) {
+        offset += 240;
+
+        sliderWrapperEl.style.transition = 'none';
+        sliderWrapperEl.style.transform = `translateX(${offset}px)`;
+
+        sliderWrapperEl.offsetHeight;
+
+        sliderWrapperEl.style.transition = 'none';
+
+        const firstChild = sliderWrapperEl.firstChild;
+        sliderWrapperEl.removeChild(firstChild);
+        sliderWrapperEl.appendChild(firstChild);
       }
-      this.visibleRatings.shift();
-      const nextIndex = (this.currentIndex + 4) % this.ratings.length;  // Adjust as needed
-      this.visibleRatings.push(this.ratings[nextIndex]);
+
+      sliderWrapperEl.style.transform = `translateX(${offset}px)`;
     }, this.speed);
   }
 
