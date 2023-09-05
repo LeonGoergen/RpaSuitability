@@ -22,6 +22,8 @@ import { ChartComponent } from './dashboard/chart/chart.component';
 import { QuestionTableComponent } from './dashboard/question-table/question-table.component';
 import { UserTableComponent } from './dashboard/user-table/user-table.component';
 import { MessageTableComponent } from './dashboard/message-table/message-table.component';
+import { RatingFormComponent } from './contact-page/rating-form/rating-form.component';
+import { MapComponentComponent } from './contact-page/map-component/map-component.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { MessageTableComponent } from './dashboard/message-table/message-table.c
     QuestionTableComponent,
     UserTableComponent,
     MessageTableComponent,
+    RatingFormComponent,
+    MapComponentComponent,
   ],
     imports: [
         BrowserModule,

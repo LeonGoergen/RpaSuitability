@@ -1,0 +1,26 @@
+.contact-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.contact-option {
+  flex-basis: calc(33.333% - 1em);
+  padding: 1em;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 0.5em;
+  border: #82a182 solid 2px;
+}
+
+.contact-option p {
+  font-size: 1em;
+}
+
+.logo {
+  width: 3em;
+  height: auto;
+}

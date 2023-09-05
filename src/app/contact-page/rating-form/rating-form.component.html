@@ -1,0 +1,25 @@
+<form [formGroup]="ratingForm" (ngSubmit)="onSubmit()" class="rating-form">
+  <div class="sameRow">
+    <div>
+      <input type="text" id="title" formControlName="name" required placeholder="Titel">
+    </div>
+    <div class="ratingContainer">
+      <div class="star-rating">
+        <input type="radio" id="5-stars" name="rating" value="5" formControlName="rating">
+        <label for="5-stars" class="star">&#9733;</label>
+        <input type="radio" id="4-stars" name="rating" value="4" formControlName="rating">
+        <label for="4-stars" class="star">&#9733;</label>
+        <input type="radio" id="3-stars" name="rating" value="3" formControlName="rating">
+        <label for="3-stars" class="star">&#9733;</label>
+        <input type="radio" id="2-stars" name="rating" value="2" formControlName="rating">
+        <label for="2-stars" class="star">&#9733;</label>
+        <input type="radio" id="1-star"  name="rating" value="1" formControlName="rating">
+        <label for="1-star"  class="star">&#9733;</label>
+      </div>
+    </div>
+  </div>
+  <div>
+    <textarea id="message" formControlName="message" required placeholder="Bewertung"></textarea>
+  </div>
+  <button type="submit">Absenden</button>
+</form>
