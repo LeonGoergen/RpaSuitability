@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
   getAverageRating() {
     let sum = 0;
     for (let item of this.ratings) {
-      sum += this.getProperty(item, 'rating');
+      sum += Number(this.getProperty(item, 'rating'));
     }
     return (sum / this.ratings.length).toFixed(2);
   }
