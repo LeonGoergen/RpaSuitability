@@ -30,4 +30,15 @@ export class ServerCommunicationService {
   getAllMessages() {
     return this.http.get(this.url + '/all-messages');
   }
+
+  storeRating(title: string, rating: number, message: string) {
+    const sessionToken = this.sessionService.getSessionToken();
+    const data = { userToken: sessionToken, title: title, rating: rating, message: message }
+    console.log('data:', data);
+    return this.http.post(this.url + '/store-rating', data);
+  }
+
+  getAllRatings() {
+    return this.http.get(this.url + '/all-ratings');
+  }
 }

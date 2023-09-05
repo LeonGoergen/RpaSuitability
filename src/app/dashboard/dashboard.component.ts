@@ -11,6 +11,7 @@ import {questions} from "../../assets/questions";
 export class DashboardComponent implements OnInit {
   properties: any = [];
   messages: any = [];
+  ratings: any = [];
   data: number[] = [];
   userIdMap = new Map();
   answers = ["Nein", "Eher Nein", "Eher Ja", "Ja"]
@@ -34,6 +35,15 @@ export class DashboardComponent implements OnInit {
       .subscribe(
         data => {
           this.messages = data;
+          this.createUserIdMap();
+        },
+        error => console.error(error)
+      );
+
+    this.serverCommunicationService.getAllRatings()
+      .subscribe(
+        data => {
+          this.ratings = data;
           this.createUserIdMap();
         },
         error => console.error(error)

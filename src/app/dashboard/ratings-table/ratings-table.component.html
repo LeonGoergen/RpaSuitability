@@ -1,0 +1,24 @@
+<div class="fa-table">
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Timestamp</th>
+        <th>Titel</th>
+        <th>Rating</th>
+        <th>Bewertung</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let rating of ratings">
+        <td>{{ getUserId(getProperty(rating, 'userToken')) }}</td>
+        <td>{{ getProperty(rating, 'timestamp') | date:'dd.MM.yyyy, HH:mm' }}</td>
+        <td>{{ getProperty(rating, 'title') }}</td>
+        <td>{{ getProperty(rating, 'rating') }}</td>
+        <td>{{ getProperty(rating, 'message') }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
