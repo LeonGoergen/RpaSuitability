@@ -28,6 +28,8 @@ import { RatingsSliderComponent } from './home-page/ratings-slider/ratings-slide
 import { FooterComponent } from './header/footer/footer.component';
 import { DatenschutzComponent } from './header/datenschutz/datenschutz.component';
 import { ImpressumComponent } from './header/impressum/impressum.component';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { ImpressumComponent } from './header/impressum/impressum.component';
         AppRoutingModule,
         NgOptimizedImage,
         MatSliderModule,
-        HttpClientModule
+        HttpClientModule,
+        MatSnackBarModule,
+        BrowserAnimationsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

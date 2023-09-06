@@ -28,6 +28,7 @@
   flex-direction: column;
   margin-left: 20px;
   margin-right: 20px;
+  text-align: left;
 }
 
 .content h3 {

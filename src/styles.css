@@ -13,6 +13,39 @@
   src: url('./assets/fonts/Ubuntu-Italic.ttf');
 }
 
+body .cdk-overlay-container .mdc-snackbar.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  box-shadow: none !important;
+  margin-left: 15px !important;
+}
+
+.success-snackbar {
+  position: fixed !important;
+  left: 40vw !important;
+  top: 5vh !important;
+  z-index: 9 !important;
+  width: 350px;
+  height: 70px;
+  background-color: whitesmoke;
+  border: #82a182 1px solid;
+  border-left: #82a182 20px solid;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-snackbar {
+  position: fixed !important;
+  left: 40vw !important;
+  top: 5vh !important;
+  z-index: 9 !important;
+  width: 350px;
+  height: 70px;
+  background-color: whitesmoke;
+  border: #b40f0f 1px solid;
+  border-left: #b40f0f 20px solid;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 body {
   font-family: UbuntuRegular, serif;
   margin: 0;

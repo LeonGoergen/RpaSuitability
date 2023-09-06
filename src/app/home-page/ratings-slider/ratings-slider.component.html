@@ -2,12 +2,12 @@
   <div class="slider-wrapper" #sliderWrapper>
     <div class="slide" *ngFor="let rating of ratings">
       <div class="content">
-        <h3>{{ getProperty(rating, 'title') }}</h3>
         <div class="star-container">
           <ng-container *ngFor="let star of [1,2,3,4,5]">
             <label class="star" [ngClass]="{ 'active': star <= getProperty(rating, 'rating') }">&#9733;</label>
           </ng-container>
         </div>
+        <h3>{{ getProperty(rating, 'title') }}</h3>
         <p>{{ getProperty(rating, 'message') }}</p>
       </div>
       <div class="rating-footer">

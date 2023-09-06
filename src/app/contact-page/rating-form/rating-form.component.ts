@@ -1,6 +1,7 @@
 import {Component, Renderer2} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ServerCommunicationService} from "../../services/server-communication.service";
+import {SnackbarService} from "../../services/snackbar.service";
 
 @Component({
   selector: 'app-rating-form',
@@ -12,7 +13,8 @@ export class RatingFormComponent {
 
   constructor(private fb: FormBuilder,
               private renderer: Renderer2,
-              private serverCommunicationService: ServerCommunicationService) {
+              private serverCommunicationService: ServerCommunicationService,
+              private snackbarService: SnackbarService) {
     this.ratingForm = this.fb.group({
       title: new FormControl('', Validators.required),
       rating: new FormControl('', Validators.required),
@@ -25,11 +27,11 @@ export class RatingFormComponent {
       const { title, rating, message } = this.ratingForm.value;
       this.serverCommunicationService.storeRating(title, rating, message).subscribe(
         response => {
-          console.log('Rating stored:', response);
+          this.snackbarService.onSuccess("Bewertung wurde erfolgreich gesendet!");
           this.ratingForm.reset();
         },
         error => {
-          console.log('Error storing rating:', error);
+          this.snackbarService.onError("Bewertung konnte nicht gesendet werden!");
         }
       );
     } else {
