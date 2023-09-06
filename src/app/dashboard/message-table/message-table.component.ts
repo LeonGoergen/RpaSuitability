@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {DashboardComponent} from "../dashboard.component";
+import {SnackbarService} from "../../services/snackbar.service";
 
 @Component({
   selector: 'app-message-table',
@@ -10,7 +11,8 @@ export class MessageTableComponent {
   @Input() messages: any = [];
   @Input() userIdMap = new Map();
 
-  constructor(private dashboardComponent: DashboardComponent) {}
+  constructor(private dashboardComponent: DashboardComponent,
+              private snackbarService: SnackbarService) {}
 
   getProperty(obj: any, key: string, subKey?: string): any {
     return this.dashboardComponent.getProperty(obj, key, subKey);
@@ -22,6 +24,22 @@ export class MessageTableComponent {
     }
 
     return this.userIdMap.get(userToken);
+  }
+
+  deleteMessage(index: number, id: string) {
+    if (window.confirm('Are you sure you want to delete this message?')) {
+      this.messages.splice(index, 1);
+      this.dashboardComponent.serverCommunicationService.deleteMessage(id).subscribe(
+        response => {
+          this.snackbarService.onSuccess("Eintrag wurde erfolgreich gelöscht!");
+        },
+        error => {
+          this.snackbarService.onError("Eintrag konnte nicht gelöscht werden!");
+        }
+      );
+    } else {
+      this.snackbarService.onWarning("Löschen des Eintrags wurde abgebrochen!");
+    }
   }
 
   protected readonly String = String;

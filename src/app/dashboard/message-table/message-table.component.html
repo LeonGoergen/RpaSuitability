@@ -8,15 +8,17 @@
         <th>Name</th>
         <th>Email</th>
         <th>Nachricht</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let message of messages">
+      <tr *ngFor="let message of messages; let i = index">
         <td>{{ getUserId(getProperty(message, 'userToken')) }}</td>
         <td>{{ getProperty(message, 'timestamp') | date:'dd.MM.yyyy, HH:mm' }}</td>
         <td>{{ getProperty(message, 'name') }}</td>
         <td>{{ getProperty(message, 'email') }}</td>
         <td>{{ getProperty(message, 'message') }}</td>
+        <td><button class="delete-button" (click)="deleteMessage(i, getProperty(message, '_id'))">X</button></td>
       </tr>
       </tbody>
     </table>

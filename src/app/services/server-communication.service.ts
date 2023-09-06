@@ -21,6 +21,11 @@ export class ServerCommunicationService {
     return this.http.get(this.url + '/all-results');
   }
 
+  deleteResult(id: string) {
+    const data = { id: id }
+    return this.http.put(this.url + '/delete-result', data);
+  }
+
   storeMessage(name: string, email: string, message: string) {
     const sessionToken = this.sessionService.getSessionToken();
     const data = { userToken: sessionToken, name: name, email: email, message: message }
@@ -31,6 +36,11 @@ export class ServerCommunicationService {
     return this.http.get(this.url + '/all-messages');
   }
 
+  deleteMessage(id: string) {
+    const data = { id: id }
+    return this.http.put(this.url + '/delete-message', data);
+  }
+
   storeRating(title: string, rating: number, message: string) {
     const sessionToken = this.sessionService.getSessionToken();
     const data = { userToken: sessionToken, title: title, rating: rating, message: message }
@@ -39,5 +49,10 @@ export class ServerCommunicationService {
 
   getAllRatings() {
     return this.http.get(this.url + '/all-ratings');
+  }
+
+  deleteRating(id: string) {
+    const data = { id: id }
+    return this.http.put(this.url + '/delete-rating', data);
   }
 }

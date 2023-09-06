@@ -21,4 +21,11 @@ export class SnackbarService {
       panelClass: ['error-snackbar']
     });
   }
+
+  onWarning(message: string) {
+    this._snackBar.open(message, '', {
+      duration: 4000,
+      panelClass: ['warning-snackbar']
+    });
+  }
 }

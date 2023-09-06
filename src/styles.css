@@ -15,7 +15,6 @@
 
 body .cdk-overlay-container .mdc-snackbar.mat-mdc-snack-bar-container .mdc-snackbar__surface {
   box-shadow: none !important;
-  margin-left: 15px !important;
 }
 
 .success-snackbar {
@@ -23,7 +22,7 @@ body .cdk-overlay-container .mdc-snackbar.mat-mdc-snack-bar-container .mdc-snack
   left: 40vw !important;
   top: 5vh !important;
   z-index: 9 !important;
-  width: 350px;
+  width: 400px;
   height: 70px;
   background-color: whitesmoke;
   border: #82a182 1px solid;
@@ -37,11 +36,25 @@ body .cdk-overlay-container .mdc-snackbar.mat-mdc-snack-bar-container .mdc-snack
   left: 40vw !important;
   top: 5vh !important;
   z-index: 9 !important;
-  width: 350px;
+  width: 400px;
   height: 70px;
   background-color: whitesmoke;
   border: #b40f0f 1px solid;
   border-left: #b40f0f 20px solid;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.warning-snackbar {
+  position: fixed !important;
+  left: 40vw !important;
+  top: 5vh !important;
+  z-index: 9 !important;
+  width: 400px;
+  height: 70px;
+  background-color: whitesmoke;
+  border: #e7b047 1px solid;
+  border-left: #e7b047 20px solid;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

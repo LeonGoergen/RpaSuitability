@@ -55,3 +55,22 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: #ffffff;
 }
+
+.delete-button {
+  background-color: #ff4b5c;  /* red */
+  color: white;               /* white text */
+  border: none;                /* remove default border */
+  border-radius: 5px;          /* rounded corners */
+  padding: 10px 10px;          /* some padding */
+  font-size: 16px;             /* set font size */
+  cursor: pointer;             /* pointer cursor on hover */
+  transition: background-color 0.3s ease; /* transition for hover effect */
+}
+
+.delete-button:hover {
+  background-color: #e43f50;  /* slightly darker red on hover */
+}
+
+.delete-button:active {
+  background-color: #c63548;  /* even darker red on active/click */
+}

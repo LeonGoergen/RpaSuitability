@@ -8,15 +8,23 @@
         <th>Titel</th>
         <th>Rating</th>
         <th>Bewertung</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let rating of ratings">
+      <tr *ngFor="let rating of ratings; let i = index">
         <td>{{ getUserId(getProperty(rating, 'userToken')) }}</td>
         <td>{{ getProperty(rating, 'timestamp') | date:'dd.MM.yyyy, HH:mm' }}</td>
         <td>{{ getProperty(rating, 'title') }}</td>
-        <td>{{ getProperty(rating, 'rating') }}</td>
+        <td>
+          <div class="star-container">
+            <ng-container *ngFor="let star of [1,2,3,4,5]">
+              <label class="star" [ngClass]="{ 'active': star <= getProperty(rating, 'rating') }">&#9733;</label>
+            </ng-container>
+          </div>
+        </td>
         <td>{{ getProperty(rating, 'message') }}</td>
+        <td><button class="delete-button" (click)="deleteRating(i, getProperty(rating, '_id'))">X</button></td>
       </tr>
       </tbody>
     </table>

@@ -7,14 +7,16 @@
         <th>Timestamp</th>
         <th *ngFor="let question of questionsId">{{ question }}</th>
         <th>Score</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let result of properties">
+      <tr *ngFor="let result of properties; let i = index">
         <td>{{ getUserId(getProperty(result, 'userToken')) }}</td>
         <td>{{ getProperty(result, 'timestamp') | date:'dd.MM.yyyy, HH:mm' }}</td>
         <td *ngFor="let question of questionsId">{{ getAnswer(result, String(question)) }}</td>
         <td>{{ getScore(result) }}%</td>
+        <td><button class="delete-button" (click)="deleteProperty(i, getProperty(result, '_id'))">X</button></td>
       </tr>
       </tbody>
     </table>
