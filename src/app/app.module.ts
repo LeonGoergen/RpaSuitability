@@ -25,6 +25,9 @@ import { RatingFormComponent } from './contact-page/rating-form/rating-form.comp
 import { MapComponentComponent } from './contact-page/map-component/map-component.component';
 import { RatingsTableComponent } from './dashboard/ratings-table/ratings-table.component';
 import { RatingsSliderComponent } from './home-page/ratings-slider/ratings-slider.component';
+import { FooterComponent } from './header/footer/footer.component';
+import { DatenschutzComponent } from './header/datenschutz/datenschutz.component';
+import { ImpressumComponent } from './header/impressum/impressum.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { RatingsSliderComponent } from './home-page/ratings-slider/ratings-slide
     MapComponentComponent,
     RatingsTableComponent,
     RatingsSliderComponent,
+    FooterComponent,
+    DatenschutzComponent,
+    ImpressumComponent,
   ],
     imports: [
         BrowserModule,

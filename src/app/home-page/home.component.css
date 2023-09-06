@@ -21,10 +21,6 @@ body {
   transition: all 0.3s;
 }
 
-.content-section:hover {
-  transform: scale(1.02);
-}
-
 .info-section h2 {
   margin-top: 20px;
   font-size: 1.2rem;
@@ -132,7 +128,7 @@ body {
 }
 
 .title, .subtitle {
-  color: #0F4C81; /* dunkles Blau, ähnlich dem Logo der Universität Rostock */
+  color: #0F4C81;
   font-weight: bold;
 }
 

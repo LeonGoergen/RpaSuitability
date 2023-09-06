@@ -16,8 +16,18 @@ export class RatingsSliderComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.serverCommunicationService.getAllRatings().subscribe(data => {
-      this.ratings = data;
+      this.ratings = this.getOnlyPositiveRatings(data);
     });
+  }
+
+  getOnlyPositiveRatings(ratings: any): any {
+    for (let rating of ratings) {
+      if (this.getProperty(rating, 'rating') < 4) {
+        ratings.splice(ratings.indexOf(rating), 1);
+      }
+    }
+
+    return ratings;
   }
 
   ngAfterViewInit(): void {
@@ -29,10 +39,10 @@ export class RatingsSliderComponent implements OnInit, AfterViewInit {
     let offset = 0;
 
     setInterval(() => {
-      offset -= 1; // Adjust the speed if needed
+      offset -= .5; // Adjust the speed if needed
 
-      if (-offset >= 210) {
-        offset += 240;
+      if (-offset >= 290) {
+        offset += 290;
 
         sliderWrapperEl.style.transition = 'none';
         sliderWrapperEl.style.transform = `translateX(${offset}px)`;

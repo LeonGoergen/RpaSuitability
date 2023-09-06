@@ -1,9 +1,18 @@
 <div class="slider-container">
   <div class="slider-wrapper" #sliderWrapper>
     <div class="slide" *ngFor="let rating of ratings">
-      <p>{{ getProperty(rating, 'title') }}</p>
-      <p>{{ getProperty(rating, 'rating') }}</p>
-      <p>{{ getProperty(rating, 'message') }}</p>
+      <div class="content">
+        <h3>{{ getProperty(rating, 'title') }}</h3>
+        <div class="star-container">
+          <ng-container *ngFor="let star of [1,2,3,4,5]">
+            <label class="star" [ngClass]="{ 'active': star <= getProperty(rating, 'rating') }">&#9733;</label>
+          </ng-container>
+        </div>
+        <p>{{ getProperty(rating, 'message') }}</p>
+      </div>
+      <div class="rating-footer">
+        <p>{{ getProperty(rating, 'timestamp') | date:'dd.MM.yyyy' }}</p>
+      </div>
     </div>
   </div>
 </div>
