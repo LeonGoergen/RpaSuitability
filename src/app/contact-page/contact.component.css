@@ -1,19 +1,19 @@
 .container {
   font-family: 'Helvetica', sans-serif;
-  display: flex;
   width: 75%;
   margin: 0 auto;
   border-radius: 10px;
 }
 
 .form-container {
-  width: 48%;
+  display: flex;
+  width: 100%;
   margin: 3em 0;
 }
 
 .contact-container {
-  width: 52%;
-  margin: 3em 1em;
+  width: 50%;
+  height: 800px;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -46,9 +46,18 @@
 
 p {
   font-family: Ubuntu, sans-serif;
-  font-size: 1.3em;
+  font-size: 1.5em;
   color: #2c3e50;
-  margin: 1em .5em;
+  margin: auto 1em;
+  width: 40%;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
 }
 
 @media screen and (max-width: 768px) {

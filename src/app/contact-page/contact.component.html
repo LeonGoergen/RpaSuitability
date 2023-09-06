@@ -1,12 +1,16 @@
 <div class="container">
   <div class="form-container">
-    <p>Wir würden uns sehr über eine Bewertung des Eignungstestes freuen und sind offen für Verbesserungsverschläge!</p>
+    <p class="right">Wir würden uns sehr über eine Bewertung des Eignungstestes freuen und sind offen für Verbesserungsverschläge!</p>
     <app-rating-form></app-rating-form>
-
-    <p>Falls du mit uns Kontakt aufnehmen möchtest, kannst du uns eine Nachricht über das Kontaktformular zukommen lassen!</p>
-    <app-contact-form></app-contact-form>
   </div>
-  <div class="contact-container">
-    <app-map-component></app-map-component>
+  <div class="form-container">
+    <app-contact-form></app-contact-form>
+    <p class="left">Falls du mit uns Kontakt aufnehmen möchtest, kannst du uns eine Nachricht über das Kontaktformular zukommen lassen!</p>
+  </div>
+  <div class="form-container">
+    <p class="right">Du kannst uns auch gerne Anrufen oder per Mail schreiben. Am meisten würden wir uns aber natürlich freuen, wenn du direkt vorbei kommst!</p>
+    <div class="contact-container">
+      <app-map-component></app-map-component>
+    </div>
   </div>
 </div>
