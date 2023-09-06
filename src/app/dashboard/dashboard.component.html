@@ -1,42 +1,62 @@
-<!-- An introduction to the overall function of the dashboard -->
-<p class="info-text">
-  Herzlich willkommen im Dashboard unserer Umfrageanwendung. Hier können Sie die Ergebnisse aller bisher durchgeführten Umfragen einsehen.
-  Bislang wurden insgesamt {{getTotalEntries()}} Umfragen ausgeführt.
-</p>
+<div class="sidebar">
+  <ul>
+    <li *ngFor="let section of sections">
+      <a href="#" (click)="scrollTo($event, section.id)" [class.active]="currentSection === section.id">{{ section.name }}</a>
+    </li>
+  </ul>
+</div>
 
-<p class="info-text">
-  Unten finden Sie eine Tabelle, die eine Übersicht über die Antworten auf die einzelnen Fragen bietet.
-  Für jede Frage wird die prozentuale Verteilung der vier möglichen Antworten "Nein", "Eher Nein", "Eher Ja" und "Ja" angezeigt.
-  Diese Darstellung ermöglicht es, auf einen Blick zu erkennen, wie die Teilnehmer auf die einzelnen Fragen geantwortet haben.
-</p>
+<div id="intro">
+  <p class="info-text">
+    Herzlich willkommen im Dashboard unserer Umfrageanwendung. Hier können Sie die Ergebnisse aller bisher durchgeführten Umfragen einsehen.
+    Bislang wurden insgesamt {{getTotalEntries()}} Umfragen ausgeführt.
+  </p>
+</div>
 
-<app-question-table [properties]="properties"></app-question-table>
+<div id="question-table">
+  <p class="info-text">
+    Unten finden Sie eine Tabelle, die eine Übersicht über die Antworten auf die einzelnen Fragen bietet.
+    Für jede Frage wird die prozentuale Verteilung der vier möglichen Antworten "Nein", "Eher Nein", "Eher Ja" und "Ja" angezeigt.
+    Diese Darstellung ermöglicht es, auf einen Blick zu erkennen, wie die Teilnehmer auf die einzelnen Fragen geantwortet haben.
+  </p>
 
-<p class="info-text">
-  Hier finden Sie ein Diagramm, das eine visuelle Darstellung der Umfrageergebnisse bietet.
-  Es bietet eine grafische Übersicht über die Anzahl der abgeschlossenen Fragebogen, in einer gewissen Zeitspanne.
-</p>
+  <app-question-table [properties]="properties"></app-question-table>
+</div>
 
-<app-chart [properties]="properties"></app-chart>
+  <div id="chart">
+    <p class="info-text">
+      Hier finden Sie ein Diagramm, das eine visuelle Darstellung der Umfrageergebnisse bietet.
+      Es bietet eine grafische Übersicht über die Anzahl der abgeschlossenen Fragebogen, in einer gewissen Zeitspanne.
+    </p>
 
-<p class="info-text">
-  Die nachfolgende Tabelle bietet eine detailliertere Ansicht der Umfrageergebnisse.
-  Sie listet jede einzelne Umfrage auf, die von den Benutzern abgeschlossen wurde.
-  Die Tabelle enthält die ID der Umfrage, die eindeutige Benutzer-ID, den Zeitstempel der Umfrage und die Antworten auf jede Frage.
-  Am Ende jeder Zeile wird ein Gesamtscore angezeigt, der auf den Antworten des Benutzers auf die Fragen basiert.
-</p>
+    <app-chart [properties]="properties"></app-chart>
+  </div>
 
-<app-user-table [properties]="properties" [userIdMap]="userIdMap"></app-user-table>
+<div id="user-table">
+  <p class="info-text">
+    Die nachfolgende Tabelle bietet eine detailliertere Ansicht der Umfrageergebnisse.
+    Sie listet jede einzelne Umfrage auf, die von den Benutzern abgeschlossen wurde.
+    Die Tabelle enthält die ID der Umfrage, die eindeutige Benutzer-ID, den Zeitstempel der Umfrage und die Antworten auf jede Frage.
+    Am Ende jeder Zeile wird ein Gesamtscore angezeigt, der auf den Antworten des Benutzers auf die Fragen basiert.
+  </p>
 
-<p class="info-text">
-  Die nachfolgende Tabelle bietet eine Übersicht über die verfassten Nachrichten.
-</p>
+  <app-user-table [properties]="properties" [userIdMap]="userIdMap"></app-user-table>
+</div>
 
-<app-message-table [messages]="messages" [userIdMap]="userIdMap"></app-message-table>
+<div id="message-table">
+  <p class="info-text">
+    Die nachfolgende Tabelle bietet eine Übersicht über die verfassten Nachrichten.
+  </p>
 
-<p class="info-text">
-  Die nachfolgende Tabelle bietet eine Übersicht über die verfassten Bewertungen. Die Bewertungen werden in einer Skala von 1 bis 5 angegeben.
-  Die durchschnittliche Bewertung der Fragebogens liegt bei {{getAverageRating()}} von 5 Sternen.
-</p>
+  <app-message-table [messages]="messages" [userIdMap]="userIdMap"></app-message-table>
+</div>
 
-<app-ratings-table [ratings]="ratings" [userIdMap]="userIdMap"></app-ratings-table>
+
+<div id="ratings-table">
+  <p class="info-text">
+    Die nachfolgende Tabelle bietet eine Übersicht über die verfassten Bewertungen. Die Bewertungen werden in einer Skala von 1 bis 5 angegeben.
+    Die durchschnittliche Bewertung der Fragebogens liegt bei {{getAverageRating()}} von 5 Sternen.
+  </p>
+
+  <app-ratings-table [ratings]="ratings" [userIdMap]="userIdMap"></app-ratings-table>
+</div>

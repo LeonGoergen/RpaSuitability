@@ -1,24 +1,60 @@
-/* This applies to all available scrollbars */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+.sidebar {
+  position: fixed;
+  margin: auto 0;
+  top: 25%;
+  left: 0;
+  height: auto;
+  width: 100px;
+  background-color: #ffffff;
+  overflow: auto;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #dcdcdc;
-  border-radius: 10px;
+.sidebar ul li {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  display: flex;
+  position: relative;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #bbbbbb;
+.sidebar ul li::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.sidebar ul li:last-child::after {
+  display: none;  /* Remove the border from the last item */
+}
+
+.sidebar ul li a {
+  color: #000000;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  text-decoration: none;
+  display: flex;
+  flex-grow: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar ul li a.active {
+  background-color: #d2d2d2;
 }
 
 .info-text {

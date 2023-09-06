@@ -41,8 +41,8 @@ export class RatingsSliderComponent implements OnInit, AfterViewInit {
     setInterval(() => {
       offset -= .5; // Adjust the speed if needed
 
-      if (-offset >= 305) {
-        offset += 305;
+      if (-offset >= 300) {
+        offset += 300;
 
         sliderWrapperEl.style.transition = 'none';
         sliderWrapperEl.style.transform = `translateX(${offset}px)`;
